@@ -5,67 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99c81cb3-63aa-4e0d-adbf-06539b666558" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Token.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/TradersSolutionApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/config/PersistenceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/constants/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/constants/enums/District.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/constants/enums/OperationStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/constants/enums/PaymentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/constants/enums/SalesMode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/controller/auth/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/controller/auth/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/controller/super_classes/CrudController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/dao/auth/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/dao/auth/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/dto/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/auth/Permission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/auth/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/auth/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Attachment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/AuditTrail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Notifications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Purchase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Supplier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/config/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/data/CarRentPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/data/ClientApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/data/CommissionRequisition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/data/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/data/SalesProposal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/data/VehicleRequisition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/super_classes/ApprovableEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/super_classes/AuditableEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/model/super_classes/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/service/auth/RoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/service/auth/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/service/super_classes/CrudService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/service/super_classes/auth/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/service/super_classes/auth/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/prologiccreations/traderssolution/utils/PageUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/isdbbros/realestate/RealEstateApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/prologiccreations/traderssolution/TradersSolutionApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/todo.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
