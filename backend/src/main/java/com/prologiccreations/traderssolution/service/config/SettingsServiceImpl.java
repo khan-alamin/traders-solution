@@ -1,9 +1,9 @@
 package com.prologiccreations.traderssolution.service.config;
 
-import com.prologiccreations.traderssolution.dao.config.CustomerRepository;
+import com.prologiccreations.traderssolution.dao.config.SettingsRepository;
 import com.prologiccreations.traderssolution.dto.Response;
-import com.prologiccreations.traderssolution.model.config.Customer;
-import com.prologiccreations.traderssolution.service.super_classes.config.CustomerService;
+import com.prologiccreations.traderssolution.model.config.Settings;
+import com.prologiccreations.traderssolution.service.super_classes.config.SettingsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,15 +17,15 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 
 @Service
 @RequiredArgsConstructor
-public class SettingsServiceImpl implements CustomerService {
+public class SettingsServiceImpl implements SettingsService {
 
-    private final CustomerRepository CustomerRepository;
+    private final SettingsRepository settingsRepository;
 
     @Override
-    public Response storeData(Customer data) {
+    public Response storeData(Settings data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            CustomerRepository.save(data);
+            settingsRepository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -33,37 +33,37 @@ public class SettingsServiceImpl implements CustomerService {
     }
 
     @Override
-    public Response<Page<Customer>> getAll(Pageable pageable) {
-        Page<Customer> page = CustomerRepository.findByActive(true, pageable);
+    public Response<Page<Settings>> getAll(Pageable pageable) {
+        Page<Settings> page = settingsRepository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
-    public Response<Customer> getById(Long id) {
-        Customer Customer = CustomerRepository.findById(id).orElse(new Customer());
-        return new Response<>(SUCCESS, null, Customer);
+    public Response<Settings> getById(Long id) {
+        Settings Settings = settingsRepository.findById(id).orElse(new Settings());
+        return new Response<>(SUCCESS, null, Settings);
     }
 
     @Override
     public Response delete(Long id) {
-        CustomerRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        settingsRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 
     @Override
-    public String validate(Customer data) {
+    public String validate(Settings data) {
         return checkDuplicate(data);
     }
 
     @Override
-    public String checkDuplicate(Customer data) {
-//        boolean CustomernameExists;
+    public String checkDuplicate(Settings data) {
+//        boolean SettingsnameExists;
 //        if (data.hasId()) {
-//            CustomernameExists = CustomerRepository.existsByCustomername(data.getCustomername(), data.getId());
+//            SettingsnameExists = SettingsRepository.existsBySettingsname(data.getSettingsname(), data.getId());
 //        } else {
-//            CustomernameExists = CustomerRepository.existsByCustomername(data.getCustomername());
+//            SettingsnameExists = SettingsRepository.existsBySettingsname(data.getSettingsname());
 //        }
-//        return CustomernameExists ? "Failed to register. Customer already exists" : null;
+//        return SettingsnameExists ? "Failed to register. Settings already exists" : null;
         return null;
     }
 

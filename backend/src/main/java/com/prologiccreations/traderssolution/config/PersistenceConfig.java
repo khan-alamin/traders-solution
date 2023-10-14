@@ -1,13 +1,13 @@
-package com.prologiccreations.traderssolution.config;
+//package com.prologiccreations.traderssolution.config;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+//import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+//import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
-@EnableTransactionManagement
-@EnableJpaRepositories
-@EnableJpaAuditing
-public class PersistenceConfig{
-}
+//@Configuration
+//@EnableTransactionManagement
+//@EnableJpaRepositories
+//@EnableJpaAuditing
+//public class PersistenceConfig{
+//}
