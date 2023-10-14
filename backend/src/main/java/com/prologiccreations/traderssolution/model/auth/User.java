@@ -16,6 +16,8 @@ public class User extends ApprovableEntity {
     private String name;
     @Column(nullable = false, unique = true)
     private String username;
+    @Column(nullable = false)
+    private String password;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private List<Role> roles;
 
