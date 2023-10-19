@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { RoleFormComponent } from './components/auth/role/role-form/role-form.component';
 import { RoleListComponent } from './components/auth/role/role-list/role-list.component';
-import { CustomerFormComponent } from './components/config/customer/customer-form/customer-form.component';
 import { CustomerListComponent } from './components/config/customer/customer-list/customer-list.component';
 import { EmployeeFormComponent } from './components/config/employee/employee-form/employee-form.component';
 import { EmployeeListComponent } from './components/config/employee/employee-list/employee-list.component';
@@ -42,14 +40,23 @@ import { AuditAbleFormComponent } from './components/super/audit-able/audit-able
 import { AuditAbleListComponent } from './components/super/audit-able/audit-able-list/audit-able-list.component';
 import { BaseFormComponent } from './components/super/base/base-form/base-form.component';
 import { BaseListComponent } from './components/super/base/base-list/base-list.component';
+import { CustomerFormComponent } from './components/config/customer/customer-form/customer-form.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RoleFormComponent,
     RoleListComponent,    
-    CustomerFormComponent,
     CustomerListComponent,
+    CustomerFormComponent,
     EmployeeFormComponent,
     EmployeeListComponent,
     ProductFormComponent,
@@ -77,7 +84,8 @@ import { BaseListComponent } from './components/super/base/base-list/base-list.c
     AuditAbleFormComponent,
     AuditAbleListComponent,
     BaseFormComponent,
-    BaseListComponent,
+    BaseListComponent
+
   ],
   imports: [
     BrowserModule,
@@ -90,9 +98,12 @@ import { BaseListComponent } from './components/super/base/base-list/base-list.c
     MatButtonModule,
     MatSelectModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  
   ],
-  providers: [],
+  providers: [provideAnimations()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

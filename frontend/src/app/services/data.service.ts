@@ -6,7 +6,8 @@ import { ConfigService } from './config/config.service';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {  
+export class DataService {
+    
 
   data: any = {};
 
