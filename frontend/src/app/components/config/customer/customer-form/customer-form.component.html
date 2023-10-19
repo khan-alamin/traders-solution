@@ -1,1 +1,90 @@
-<p>customer-form works!</p>
+<h1>Customer Form</h1>
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" />
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" />
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" />
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input matInput formControlName="phone" />
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Billing Address</mat-label>
+            <textarea matInput formControlName="billingAddress"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Company Name</mat-label>
+            <input matInput formControlName="companyName" />
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>TIN</mat-label>
+            <input matInput formControlName="tin" />
+        </mat-form-field>
+    </div>
+
+    <!-- <mat-form-field>
+        <mat-label>Date of Registration</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateOfRegistration" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Date of Registration</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dateOfRegistration">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Customer Category</mat-label>
+            <input matInput formControlName="customerCategory" />
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Credit Limit</mat-label>
+            <input matInput formControlName="creditLimit" />
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

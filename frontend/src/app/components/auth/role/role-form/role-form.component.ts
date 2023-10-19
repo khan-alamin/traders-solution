@@ -22,22 +22,17 @@ export class RoleFormComponent implements OnInit {
   createForm() {
     this.roleForm = this.formBuilder.group({
       name: ['', Validators.required],
-      permissions: ['', Validators.required]
+      permissions: ['']
     });
   }
 
   submitForm() {
     this.submitted = true;
-
     if (this.roleForm.invalid) {
-      // Handle validation errors, e.g., mark fields as touched and display error messages
       return;
     }
-
     const roleData: Role = this.roleForm.value;
     this.service.save(roleData,this.endPoint ).subscribe(response => {
-      // Handle the response from the service (e.g., show a success message)
-      // Optionally, you can reset the form after successful submission
       this.roleForm.reset();
       this.submitted = false;
     });
