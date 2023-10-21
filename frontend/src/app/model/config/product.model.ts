@@ -1,4 +1,4 @@
-import { AuditAbleModel } from "../super-model/audit-able-model";
+import { AuditAbleModel } from "../super-model/auditable.model";
 
 export interface Product extends AuditAbleModel {
     name?:string;

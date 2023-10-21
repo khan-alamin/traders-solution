@@ -1,4 +1,4 @@
-import { ApprovableEntity } from "../super-model/approvable-model";
+import { ApprovableEntity } from "../super-model/approvable.model";
 
 export interface User extends ApprovableEntity{
     name?: string;

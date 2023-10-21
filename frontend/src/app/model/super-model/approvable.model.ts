@@ -1,4 +1,4 @@
-import { BaseModel } from "./base-model";
+import { BaseModel } from "./base.model";
 
 export interface ApprovableEntity extends BaseModel {
     isApproved?: boolean;

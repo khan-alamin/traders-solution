@@ -21,8 +21,8 @@ export class DataService {
     });
   }
 
-  async getList(endPoint: string): Promise<any[]> {
-    let data = await fetch(`${this.config.apiUrl}/${endPoint}`);
+  async getList(endPoint: string, pageNumber: number = 0, pageSize: number = 1000000000): Promise<any[]> {
+    let data = await fetch(`${this.config.apiUrl}/${endPoint}/list/${pageNumber}/${pageSize}`);
     return await data?.json();
   }
 

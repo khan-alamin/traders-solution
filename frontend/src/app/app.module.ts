@@ -45,7 +45,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -100,8 +100,8 @@ import { provideAnimations } from '@angular/platform-browser/animations';
     MatInputModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatNativeDateModule
-  
+    MatNativeDateModule,
+    MatGridListModule
   ],
   providers: [provideAnimations()],
   bootstrap: [AppComponent]

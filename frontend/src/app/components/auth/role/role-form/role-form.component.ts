@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Role } from '../../../../model/auth/role';
 import { DataService } from '../../../../services/data.service';
+import { Permission } from 'src/app/model/auth/permission';
 
 @Component({
   selector: 'app-role-form',
@@ -31,8 +32,13 @@ export class RoleFormComponent implements OnInit {
     if (this.roleForm.invalid) {
       return;
     }
-    const roleData: Role = this.roleForm.value;
-    this.service.save(roleData,this.endPoint ).subscribe(response => {
+    const permissions: Permission[] = this.roleForm.value.permissions
+      .split(" */ *")
+      .map((p: string) => { 
+        return { name: p, componentKey: p.toUpperCase() };
+      });
+    const roleData: Role = { ...this.roleForm.value, permissions: permissions };
+    this.service.save(roleData, this.endPoint).subscribe(response => {
       this.roleForm.reset();
       this.submitted = false;
     });
