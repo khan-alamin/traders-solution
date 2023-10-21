@@ -1,4 +1,4 @@
-import { BaseModel } from "../super-model/base-model";
+import { BaseModel } from "../super-model/base.model";
 
 export interface Permission extends BaseModel {
     name?: string;

@@ -1,21 +1,30 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Customer } from '../../../../model/config/customer.model';
+import { DataService } from '../../../../services/data.service';
+import { Permission } from '../../../../model/auth/permission';
 
 @Component({
   selector: 'app-customer-form',
   templateUrl: './customer-form.component.html',
   styleUrls: ['./customer-form.component.scss']
 })
-export class CustomerFormComponent {
-  customerForm: FormGroup;
+export class CustomerFormComponent implements OnInit {
+  customerForm!: FormGroup;
+  submitted = false;
+  endPoint = "customer";
 
-  constructor(private fb: FormBuilder) {
-    this.customerForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+  constructor(private formBuilder: FormBuilder, private service: DataService) { }
+
+  ngOnInit() {
+    this.createForm();
+  }
+
+  createForm() {
+    this.customerForm = this.formBuilder.group({
+      firstName: [''],
+      lastName: [''],
+      email: [''],
       phone: [''],
       address: [''],
       billingAddress: [''],
@@ -23,15 +32,19 @@ export class CustomerFormComponent {
       tin: [''],
       dateOfRegistration: [''],
       customerCategory: [''],
-      creditLimit: ['']
+      creditLimit: [''],
     });
   }
 
-  onSubmit() {
-    if (this.customerForm.valid) {
-      // Handle form submission here
-      console.log(this.customerForm.value);
+  submitForm() {
+    this.submitted = true;
+    if (this.customerForm.invalid) {
+      return;
     }
+    const customerData: Customer = { ...this.customerForm.value };
+    this.service.save(customerData, this.endPoint).subscribe(response => {
+      this.customerForm.reset();
+      this.submitted = false;
+    });
   }
-
 }
