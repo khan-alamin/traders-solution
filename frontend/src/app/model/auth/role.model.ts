@@ -1,5 +1,5 @@
 import { ApprovableEntity } from "../super-model/approvable.model";
-import { Permission } from "./permission";
+import { Permission } from "./permission.model";
 
 export interface Role extends ApprovableEntity {
     name?: string;

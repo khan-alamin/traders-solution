@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @Entity
@@ -19,6 +21,6 @@ public class Notifications extends AuditableEntity {
     private String senderUserID;
     private String priorityLevel;
     private String readTimestamp;
-    private String expirationDate;
+    private LocalDate expirationDate;
     private String additionalMetadata;
 }
