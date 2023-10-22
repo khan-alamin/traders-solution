@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("team/")
 public class TeamController implements CrudController<Team, Long> {
-    private final TeamService TeamService;
+    private final TeamService teamService;
 
     @Override
     public ResponseEntity<Response> storeData(Team data) {
-        Response response = TeamService.storeData(data);
+        Response response = teamService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Page<Team>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<Team>> response = TeamService.getAll(pageable);
+        Response<Page<Team>> response = teamService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Team>> getOne(Long id) {
-        Response<Team> response = TeamService.getById(id);
+        Response<Team> response = teamService.getById(id);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response> delete(Long id) {
-        Response response = TeamService.delete(id);
+        Response response = teamService.delete(id);
         return ResponseEntity.ok(response);
     }
 }

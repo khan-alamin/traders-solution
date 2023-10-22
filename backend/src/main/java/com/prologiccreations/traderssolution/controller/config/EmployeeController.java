@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("employee/")
 public class EmployeeController implements CrudController<Employee, Long> {
-    private final EmployeeService EmployeeService;
+    private final EmployeeService employeeService;
 
     @Override
     public ResponseEntity<Response> storeData(Employee data) {
-        Response response = EmployeeService.storeData(data);
+        Response response = employeeService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Page<Employee>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<Employee>> response = EmployeeService.getAll(pageable);
+        Response<Page<Employee>> response = employeeService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Employee>> getOne(Long id) {
-        Response<Employee> response = EmployeeService.getById(id);
+        Response<Employee> response = employeeService.getById(id);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response> delete(Long id) {
-        Response response = EmployeeService.delete(id);
+        Response response = employeeService.delete(id);
         return ResponseEntity.ok(response);
     }
 }

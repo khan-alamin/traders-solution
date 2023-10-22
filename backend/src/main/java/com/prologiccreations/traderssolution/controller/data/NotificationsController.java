@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("notifications/")
 public class NotificationsController implements CrudController<Notifications, Long> {
-    private final NotificationsService NotificationsService;
+    private final NotificationsService notificationsService;
 
     @Override
     public ResponseEntity<Response> storeData(Notifications data) {
-        Response response = NotificationsService.storeData(data);
+        Response response = notificationsService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Page<Notifications>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<Notifications>> response = NotificationsService.getAll(pageable);
+        Response<Page<Notifications>> response = notificationsService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Notifications>> getOne(Long id) {
-        Response<Notifications> response = NotificationsService.getById(id);
+        Response<Notifications> response = notificationsService.getById(id);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response> delete(Long id) {
-        Response response = NotificationsService.delete(id);
+        Response response = notificationsService.delete(id);
         return ResponseEntity.ok(response);
     }
 }

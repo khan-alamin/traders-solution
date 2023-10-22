@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("attachment/")
 public class AttachmentController implements CrudController<Attachment, Long> {
-    private final AttachmentService AttachmentService;
+    private final AttachmentService attachmentService;
 
     @Override
     public ResponseEntity<Response> storeData(Attachment data) {
-        Response response = AttachmentService.storeData(data);
+        Response response = attachmentService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Page<Attachment>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<Attachment>> response = AttachmentService.getAll(pageable);
+        Response<Page<Attachment>> response = attachmentService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Attachment>> getOne(Long id) {
-        Response<Attachment> response = AttachmentService.getById(id);
+        Response<Attachment> response = attachmentService.getById(id);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response> delete(Long id) {
-        Response response = AttachmentService.delete(id);
+        Response response = attachmentService.delete(id);
         return ResponseEntity.ok(response);
     }
 }

@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("settings/")
 public class SettingsController implements CrudController<Settings, Long> {
-    private final SettingsService SettingsService;
+    private final SettingsService settingsService;
 
     @Override
     public ResponseEntity<Response> storeData(Settings data) {
-        Response response = SettingsService.storeData(data);
+        Response response = settingsService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Page<Settings>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<Settings>> response = SettingsService.getAll(pageable);
+        Response<Page<Settings>> response = settingsService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Settings>> getOne(Long id) {
-        Response<Settings> response = SettingsService.getById(id);
+        Response<Settings> response = settingsService.getById(id);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response> delete(Long id) {
-        Response response = SettingsService.delete(id);
+        Response response = settingsService.delete(id);
         return ResponseEntity.ok(response);
     }
 }

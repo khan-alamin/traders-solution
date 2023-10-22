@@ -1,7 +1,6 @@
 package com.prologiccreations.traderssolution.model.super_classes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.prologiccreations.traderssolution.TradersSolutionApplication;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,11 +9,8 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import java.time.LocalDateTime;
-
-import static com.prologiccreations.traderssolution.TradersSolutionApplication.*;
-import static com.prologiccreations.traderssolution.service.auth.UserServiceImpl.*;
+import static com.prologiccreations.traderssolution.TradersSolutionApplication.getCurrentUsername;
 
 @Getter
 @Setter
@@ -37,6 +33,7 @@ public abstract class AuditableEntity extends BaseEntity {
 
     @PrePersist
     public void onPrePersist() {
+        this.setActive(true);
         this.createdDate = LocalDateTime.now();
         this.createdBy = getCurrentUsername();
     }

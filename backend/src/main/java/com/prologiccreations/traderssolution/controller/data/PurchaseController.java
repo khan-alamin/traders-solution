@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("purchase/")
 public class PurchaseController implements CrudController<Purchase, Long> {
-    private final PurchaseService PurchaseService;
+    private final PurchaseService purchaseService;
 
     @Override
     public ResponseEntity<Response> storeData(Purchase data) {
-        Response response = PurchaseService.storeData(data);
+        Response response = purchaseService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Page<Purchase>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<Purchase>> response = PurchaseService.getAll(pageable);
+        Response<Page<Purchase>> response = purchaseService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Purchase>> getOne(Long id) {
-        Response<Purchase> response = PurchaseService.getById(id);
+        Response<Purchase> response = purchaseService.getById(id);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response> delete(Long id) {
-        Response response = PurchaseService.delete(id);
+        Response response = purchaseService.delete(id);
         return ResponseEntity.ok(response);
     }
 }
