@@ -11,6 +11,6 @@ export interface Notification extends AuditAbleModel {
     senderUserID?:string;
     priorityLevel?:string;
     readTimestamp?:string;
-    expirationDate?:string;
+    expirationDate?:Date;
     additionalMetadata?:string;
 }
