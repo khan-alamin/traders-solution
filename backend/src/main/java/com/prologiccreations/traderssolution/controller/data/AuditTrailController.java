@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("auditTrail/")
 public class AuditTrailController implements CrudController<AuditTrail, Long> {
-    private final AuditTrailService AuditTrailService;
+    private final AuditTrailService auditTrailService;
 
     @Override
     public ResponseEntity<Response> storeData(AuditTrail data) {
-        Response response = AuditTrailService.storeData(data);
+        Response response = auditTrailService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Page<AuditTrail>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<AuditTrail>> response = AuditTrailService.getAll(pageable);
+        Response<Page<AuditTrail>> response = auditTrailService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<AuditTrail>> getOne(Long id) {
-        Response<AuditTrail> response = AuditTrailService.getById(id);
+        Response<AuditTrail> response = auditTrailService.getById(id);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response> delete(Long id) {
-        Response response = AuditTrailService.delete(id);
+        Response response = auditTrailService.delete(id);
         return ResponseEntity.ok(response);
     }
 }

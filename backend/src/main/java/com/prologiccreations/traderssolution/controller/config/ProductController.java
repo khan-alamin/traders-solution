@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("product/")
 public class ProductController implements CrudController<Product, Long> {
-    private final ProductService ProductService;
+    private final ProductService productService;
 
     @Override
     public ResponseEntity<Response> storeData(Product data) {
-        Response response = ProductService.storeData(data);
+        Response response = productService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Page<Product>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<Product>> response = ProductService.getAll(pageable);
+        Response<Page<Product>> response = productService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Product>> getOne(Long id) {
-        Response<Product> response = ProductService.getById(id);
+        Response<Product> response = productService.getById(id);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response> delete(Long id) {
-        Response response = ProductService.delete(id);
+        Response response = productService.delete(id);
         return ResponseEntity.ok(response);
     }
 }

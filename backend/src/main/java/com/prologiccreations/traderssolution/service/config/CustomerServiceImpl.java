@@ -19,13 +19,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 @RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
 
-    private final CustomerRepository CustomerRepository;
+    private final CustomerRepository customerRepository;
 
     @Override
     public Response storeData(Customer data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            CustomerRepository.save(data);
+            customerRepository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -34,19 +34,19 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Response<Page<Customer>> getAll(Pageable pageable) {
-        Page<Customer> page = CustomerRepository.findByActive(true, pageable);
+        Page<Customer> page = customerRepository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
     public Response<Customer> getById(Long id) {
-        Customer Customer = CustomerRepository.findById(id).orElse(new Customer());
+        Customer Customer = customerRepository.findById(id).orElse(new Customer());
         return new Response<>(SUCCESS, null, Customer);
     }
 
     @Override
     public Response delete(Long id) {
-        CustomerRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        customerRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 

@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("inventory/")
 public class InventoryController implements CrudController<Inventory, Long> {
-    private final InventoryService InventoryService;
+    private final InventoryService inventoryService;
 
     @Override
     public ResponseEntity<Response> storeData(Inventory data) {
-        Response response = InventoryService.storeData(data);
+        Response response = inventoryService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Page<Inventory>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<Inventory>> response = InventoryService.getAll(pageable);
+        Response<Page<Inventory>> response = inventoryService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Inventory>> getOne(Long id) {
-        Response<Inventory> response = InventoryService.getById(id);
+        Response<Inventory> response = inventoryService.getById(id);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response> delete(Long id) {
-        Response response = InventoryService.delete(id);
+        Response response = inventoryService.delete(id);
         return ResponseEntity.ok(response);
     }
 }

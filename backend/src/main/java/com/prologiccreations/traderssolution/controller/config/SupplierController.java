@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("supplier/")
 public class SupplierController implements CrudController<Supplier, Long> {
-    private final SupplierService SupplierService;
+    private final SupplierService supplierService;
 
     @Override
     public ResponseEntity<Response> storeData(Supplier data) {
-        Response response = SupplierService.storeData(data);
+        Response response = supplierService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Page<Supplier>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<Supplier>> response = SupplierService.getAll(pageable);
+        Response<Page<Supplier>> response = supplierService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response<Supplier>> getOne(Long id) {
-        Response<Supplier> response = SupplierService.getById(id);
+        Response<Supplier> response = supplierService.getById(id);
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Response> delete(Long id) {
-        Response response = SupplierService.delete(id);
+        Response response = supplierService.delete(id);
         return ResponseEntity.ok(response);
     }
 }
