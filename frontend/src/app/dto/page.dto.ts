@@ -1,9 +1,3 @@
-export interface Page {
-    status: string;
-    message: string | null;
-    data: PageData;
-}
-
 export interface Sort {
     empty: boolean;
     sorted: boolean;
@@ -19,7 +13,7 @@ export interface Pageable {
     paged: boolean;
 }
 
-export interface PageData {
+export interface Page {
     content: any[];
     pageable: Pageable;
     last: boolean;

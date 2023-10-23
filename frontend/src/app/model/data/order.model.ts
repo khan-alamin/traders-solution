@@ -1,21 +1,22 @@
+import { EmployeeModel } from "../config/employee.model";
 import { AuditAbleModel } from "../super-model/auditable.model";
 
 export interface Order extends AuditAbleModel {
-    OrderDate?:string;
+    OrderDate?:Date;
     customer?:string;
-    employee?:string;
+    employee?:EmployeeModel;
     paymentMethod?:string;
     paymentDate?:string;
     shippingAddress?:string;
     billingAddress?:string;
     orderStatus?:string;
-    totalAmount?:string;
-    taxAmount?:string;
-    discountAmount?:string;
-    shippingFee?:string;
-    invoiceReceiptNumber?:string;
+    totalAmount?:number;
+    taxAmount?:number;
+    discountAmount?:number;
+    shippingFee?:number;
+    invoiceReceiptNumber?:number;
     notesComments?:string;
-    deliveryDate?:string;
+    deliveryDate?:Date;
     returnExchangeRequest?:string;
-    returnExchangeDate?:string;
+    returnExchangeDate?:Date;
 }

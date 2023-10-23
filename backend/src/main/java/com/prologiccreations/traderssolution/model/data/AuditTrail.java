@@ -14,7 +14,7 @@ public class AuditTrail extends AuditableEntity {
     private String actionEventType;
     private String userSystem;
     private String affectedEntity;
-    private String iPAddress;
+    private String ipAddress;
     private String userAgent;
     private String statusOutcome;
     private String additionalMetadata;

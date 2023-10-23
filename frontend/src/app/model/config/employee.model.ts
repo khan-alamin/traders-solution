@@ -1,31 +1,32 @@
 import { AuditAbleModel } from "../super-model/auditable.model";
+import { Team } from "./team.model";
 
-export interface EmployeeModel extends AuditAbleModel {
+export interface Employee extends AuditAbleModel {
     firstName?:string;
     lastName?:string;
-    dateOfBirth?:string;
+    dateOfBirth?:Date;
     gender?:string;
-    nationalId?:string;
+    nationalId?:number;
     email?:string;
-    phone?:string;
+    phone?:number;
     address?:string;
     emergencyContactName?:string;
-    emergencyContactPhone?:string;
-    hireDate?:string;
+    emergencyContactPhone?:number;
+    hireDate?:Date;
     designation?:string;
     department?:string;
-    manager?:string;
+    manager?:Employee;
     employeeStatus?:string;
-    salary?:string;
-    payFrequency?:string;
-    payRate?:string;
+    salary?:number;
+    payFrequency?: number;
+    payRate?: number;
     healthInsurance?:string;
     retirementPlans?:string;
     otherBenefits?:string;
-    performanceReviews?:string;
+    performanceReviews?:string[];
     trainingRecords?:string;
     certifications?:string;
-    terminationDate?:string;
+    terminationDate?:Date;
     reasonForTermination?:string;
-    team?:string;
+    team?:Team;
 }

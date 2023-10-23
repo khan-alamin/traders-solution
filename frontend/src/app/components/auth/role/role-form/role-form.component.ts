@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Role } from '../../../../model/auth/role';
-import { DataService } from '../../../../services/data.service';
-import { Permission } from 'src/app/model/auth/permission';
+import { Role } from '../../../../model/auth/role.model';
+import { DataService } from '../../../../services/crud.service';
+import { Permission } from 'src/app/model/auth/permission.model';
 
 @Component({
   selector: 'app-role-form',

@@ -15,13 +15,13 @@ public class Supplier extends AuditableEntity {
     private String name;
     private String contactName;
     private String contactTitle;
-    private String phoneNumber;
+    private Number phoneNumber;
     private String emailAddress;
     private String address;
     private String billingAddress;
     private String paymentTerms;
     private String paymentMethod;
-    private String tin;
+    private Number tin;
     private String website;
     private String productCategories;
     private String supplierRating;

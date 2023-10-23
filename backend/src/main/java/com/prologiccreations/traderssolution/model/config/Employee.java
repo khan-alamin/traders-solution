@@ -15,14 +15,14 @@ public class Employee extends AuditableEntity {
     private String lastName;
     private LocalDate dateOfBirth;
     private String gender;
-    private String nationalId;
+    private Number nationalId;
     //    Contact Information:
     private String email;
-    private String phone;
+    private Number phone;
     private String address;
     //    Emergency Contact Information:
     private String emergencyContactName;
-    private String emergencyContactPhone;
+    private Number emergencyContactPhone;
     //    Employment Information:
     private LocalDate hireDate;
     private String designation;
@@ -31,9 +31,9 @@ public class Employee extends AuditableEntity {
     private Employee manager;
     private String employeeStatus;
     //    Salary and Compensation:
-    private String salary;
-    private String payFrequency;
-    private String payRate;
+    private double salary;
+    private double payFrequency;
+    private double payRate;
     //    Benefits Information:
     private String healthInsurance;
     private String retirementPlans;
@@ -44,7 +44,7 @@ public class Employee extends AuditableEntity {
     private String trainingRecords;
     private String certifications;
 //    Termination Information:
-    private String terminationDate;
+    private LocalDate terminationDate;
     private String reasonForTermination;
     @Transient
     private Team team;

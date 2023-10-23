@@ -10,12 +10,12 @@ export interface Supplier extends AuditAbleModel {
     billingAddress?:string;
     paymentTerms?:string;
     paymentMethod?:string;
-    tin?:string;
+    tin?:number;
     website?:string;
     productCategories?:string;
     supplierRating?:string;
     agreements?:string;
-    preferredSupplier?:string;
+    preferredSupplier?:boolean;
     leadTime?:number;
     minimumOrderQuantity?:number;
 }
