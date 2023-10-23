@@ -1,7 +1,7 @@
 import { AuditAbleModel } from "../super-model/auditable.model";
 import { Team } from "./team.model";
 
-export interface EmployeeModel extends AuditAbleModel {
+export interface Employee extends AuditAbleModel {
     firstName?:string;
     lastName?:string;
     dateOfBirth?:Date;
@@ -15,7 +15,7 @@ export interface EmployeeModel extends AuditAbleModel {
     hireDate?:Date;
     designation?:string;
     department?:string;
-    manager?:EmployeeModel;
+    manager?:Employee;
     employeeStatus?:string;
     salary?:number;
     payFrequency?: number;
