@@ -47,6 +47,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatRadioModule} from '@angular/material/radio';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 
 
 
@@ -85,7 +86,8 @@ import {MatRadioModule} from '@angular/material/radio';
     AuditAbleFormComponent,
     AuditAbleListComponent,
     BaseFormComponent,
-    BaseListComponent
+    BaseListComponent,
+    DashboardComponent
 
   ],
   imports: [
@@ -103,7 +105,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatDatepickerModule,
     MatNativeDateModule,
     MatGridListModule,
-    MatRadioModule
+    MatRadioModule,
+    
+    
   ],
   providers: [provideAnimations()],
   bootstrap: [AppComponent]

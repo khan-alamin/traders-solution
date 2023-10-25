@@ -1,1 +1,33 @@
-<p>team-form works!</p>
+<h1>Supplier Form</h1>
+<form [formGroup]="teamForm" (ngSubmit)="submitForm()">
+    <mat-grid-list cols="3" rowHeight="4:1">
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Leader</mat-label>
+                    <input matInput formControlName="leader" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Members</mat-label>
+                    <input matInput formControlName="members" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>     
+
+        
+    </mat-grid-list>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

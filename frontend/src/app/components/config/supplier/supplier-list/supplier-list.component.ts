@@ -1,10 +1,66 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppResponse } from '../../../../dto/response.dto';
+import { Permission } from '../../../../model/auth/permission.model';
+import { Supplier } from '../../../../model/config/supplier.model';
+import { DataService } from '../../../../services/crud.service';
 
 @Component({
   selector: 'app-supplier-list',
   templateUrl: './supplier-list.component.html',
   styleUrls: ['./supplier-list.component.scss']
 })
-export class SupplierListComponent {
+export class SupplierListComponent implements OnInit {
+
+  displayedColumns: string[] = [
+    'name',
+    'contactName',
+    'contactTitle',
+    'phoneNumber',
+    'emailAddress',
+    'address',
+    'billingAddress',
+    'paymentTerms',
+    'paymentMethod',
+    'tin',
+    'website',
+    'productCategories',
+    'supplierRating',
+    'agreements',
+    'preferredSupplier',
+    'leadTime',
+    'minimumOrderQuantity',
+    'actions'];
+  dataSource: Supplier[] = [];
+
+  constructor(private service: DataService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.service.getList('supplier').then((res: AppResponse) => {
+      this.dataSource = res.data.content
+    }
+    );
+  }
+
+  delete(index: number) {
+    let id = this.dataSource[index].id as number;
+    this.service.delete(id, "supplier").subscribe(() => {
+      const newData = this.dataSource.filter((s, i) => i != index);
+      this.dataSource = newData;
+    })
+  }
+
+  edit(index: number) {
+    this.service.data = { ...this.dataSource[index] };
+    this.router.navigate(['/supplier-form']);
+  }
+
+
+
+  getPermissionAsList(permissions: Permission[]): string {
+    return permissions.map((p: Permission) => p.name).join(", ");
+  }
+
+
 
 }

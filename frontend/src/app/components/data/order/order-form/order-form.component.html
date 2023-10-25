@@ -1,1 +1,162 @@
-<p>order-form works!</p>
+<h1>Product Form</h1>
+<form [formGroup]="orderForm" (ngSubmit)="submitForm()">
+    <mat-grid-list cols="3" rowHeight="4:1">
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>OrderDate</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="OrderDate">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>customer</mat-label>
+                    <input matInput formControlName="customer" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>employee</mat-label>
+                    <input matInput formControlName="employee" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>paymentMethod</mat-label>
+                    <input matInput formControlName="paymentMethod" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>paymentDate</mat-label>
+                    <input matInput [matDatepicker]="picker1" formControlName="paymentDate">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>shippingAddress</mat-label>
+                    <textarea matInput formControlName="shippingAddress"></textarea>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>billingAddress</mat-label>
+                    <input matInput formControlName="billingAddress" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>orderStatus</mat-label>
+                    <input matInput formControlName="orderStatus" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>totalAmount</mat-label>
+                    <input matInput formControlName="totalAmount" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>       
+
+        
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>taxAmount</mat-label>
+                    <input matInput formControlName="taxAmount" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>discountAmount</mat-label>
+                    <input matInput formControlName="discountAmount" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>shippingFee</mat-label>
+                    <input matInput formControlName="shippingFee" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>invoiceReceiptNumber</mat-label>
+                    <input matInput formControlName="invoiceReceiptNumber" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>notesComments</mat-label>
+                    <input matInput formControlName="notesComments" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>deliveryDate</mat-label>
+                    <input matInput [matDatepicker]="picker2" formControlName="deliveryDate">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>returnExchangeRequest</mat-label>
+                    <input matInput formControlName="returnExchangeRequest" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>returnExchangeDate</mat-label>
+                    <input matInput [matDatepicker]="picker3" formControlName="returnExchangeDate">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker #picker3></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        
+    </mat-grid-list>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
