@@ -47,10 +47,12 @@ export class CustomerFormComponent implements OnInit {
     if (this.customerForm.invalid) {
       return;
     }
+  
     const customerData: Customer = { ...this.customerForm.value };
     this.service.save(customerData, this.endPoint).subscribe(response => {
       this.customerForm.reset();
       this.submitted = false;
+     
     });
   }
 }

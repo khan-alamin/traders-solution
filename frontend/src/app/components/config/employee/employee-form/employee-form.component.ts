@@ -28,17 +28,17 @@ export class EmployeeFormComponent implements OnInit {
     "manager": new FormControl('', []),
     "employeeStatus": new FormControl('', []),    
     "salary": new FormControl('', []),
-    "payFrequency": new FormControl(0, []),
-    "payRate": new FormControl(0, []),
-    "healthInsurance": new FormControl(0, []),
-    "retirementPlans": new FormControl(0, []),
-    "otherBenefits": new FormControl(0, []),
-    "performanceReviews": new FormControl(0, []),
-    "trainingRecords": new FormControl(0, []),
-    "certifications": new FormControl(0, []),
-    "terminationDate": new FormControl(0, []),
-    "reasonForTermination": new FormControl(0, []),
-    "team": new FormControl(0, [])
+    "payFrequency": new FormControl('', []),
+    "payRate": new FormControl('', []),
+    "healthInsurance": new FormControl('', []),
+    "retirementPlans": new FormControl('', []),
+    "otherBenefits": new FormControl('', []),
+    "performanceReviews": new FormControl('', []),
+    "trainingRecords": new FormControl('', []),
+    "certifications": new FormControl('', []),
+    "terminationDate": new FormControl('', []),
+    "reasonForTermination": new FormControl('', []),
+    "team": new FormControl('', [])
     
   };
   submitted = false;
