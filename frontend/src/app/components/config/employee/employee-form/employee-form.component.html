@@ -96,9 +96,9 @@
             <div class="input-container">
                 <mat-form-field>
                     <mat-label>Hire Date</mat-label>
-                    <input matInput [matDatepicker]="picker" formControlName="hireDate">
-                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
+                    <input matInput [matDatepicker]="picker1" formControlName="hireDate">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
                 </mat-form-field>
             </div>
         </mat-grid-tile>
@@ -167,7 +167,7 @@
                 <mat-form-field>
                 <mat-label>Health Insurance</mat-label>
                 <input matInput formControlName="healthInsurance" />
-            </mat-form-field>
+                </mat-form-field>
             </div>
         </mat-grid-tile>
 
@@ -215,15 +215,15 @@
                     <textarea matInput formControlName="certifications"></textarea>
                 </mat-form-field>
             </div>
-        </mat-grid-tile>
+        </mat-grid-tile>       
 
         <mat-grid-tile>
             <div class="input-container">
                 <mat-form-field>
                     <mat-label>Termination Date</mat-label>
-                    <input matInput [matDatepicker]="terminationDatePicker" formControlName="terminationDate" />
-                    <mat-datepicker-toggle matSuffix [for]="terminationDatePicker"></mat-datepicker-toggle>
-                    <mat-datepicker #terminationDatePicker></mat-datepicker>
+                    <input matInput [matDatepicker]="picker2" formControlName="terminationDate">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
                 </mat-form-field>
             </div>
         </mat-grid-tile>
