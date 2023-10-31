@@ -15,35 +15,27 @@ public class Employee extends AuditableEntity {
     private String lastName;
     private LocalDate dateOfBirth;
     private String gender;
-    private Number nationalId;
-    //    Contact Information:
+    private int nationalId;
     private String email;
     private Number phone;
     private String address;
-    //    Emergency Contact Information:
     private String emergencyContactName;
     private Number emergencyContactPhone;
-    //    Employment Information:
     private LocalDate hireDate;
     private String designation;
     private String department;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private Employee manager;
     private String employeeStatus;
-    //    Salary and Compensation:
     private double salary;
     private double payFrequency;
     private double payRate;
-    //    Benefits Information:
     private String healthInsurance;
     private String retirementPlans;
     private String otherBenefits;
-//    Performance and Reviews:
-    private String[] performanceReviews;
-//    Training and Certifications:
+    private String performanceReview;
     private String trainingRecords;
     private String certifications;
-//    Termination Information:
     private LocalDate terminationDate;
     private String reasonForTermination;
     @Transient

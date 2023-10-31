@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
 import { Employee } from '../../../../model/config/employee.model';
+import { Team } from 'src/app/model/config/team.model';
 
 @Component({
   selector: 'app-employee-form',
@@ -13,8 +14,8 @@ export class EmployeeFormComponent implements OnInit {
   employeeForm!: FormGroup;
   controls: any = {
     "firstName": new FormControl('', []),
-    "lastName": new FormControl('', []), 
-    "dateOfBirth": new FormControl('', []),   
+    "lastName": new FormControl('', []),
+    "dateOfBirth": new FormControl('', []),
     "gender": new FormControl('', []),
     "nationalId": new FormControl('', []),
     "email": new FormControl('', []),
@@ -26,7 +27,7 @@ export class EmployeeFormComponent implements OnInit {
     "designation": new FormControl('', []),
     "department": new FormControl('', []),
     "manager": new FormControl('', []),
-    "employeeStatus": new FormControl('', []),    
+    "employeeStatus": new FormControl('', []),
     "salary": new FormControl('', []),
     "payFrequency": new FormControl('', []),
     "payRate": new FormControl('', []),
@@ -39,7 +40,7 @@ export class EmployeeFormComponent implements OnInit {
     "terminationDate": new FormControl('', []),
     "reasonForTermination": new FormControl('', []),
     "team": new FormControl('', [])
-    
+
   };
   submitted = false;
   endPoint = "employee";
@@ -50,7 +51,7 @@ export class EmployeeFormComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.data = this.service.data;
-    if (this.data.id) {      
+    if (this.data.id) {
       populateFormControl(this.employeeForm.controls, this.data);
     }
   }
@@ -64,7 +65,9 @@ export class EmployeeFormComponent implements OnInit {
     if (this.employeeForm.invalid) {
       return;
     }
-    const employeeData: Employee = { ...this.employeeForm.value };
+
+    const manager: Employee = {id : this.controls["manager"].value}
+    const employeeData: Employee = { ...this.employeeForm.value, manager:manager };
     this.service.save(employeeData, this.endPoint).subscribe(response => {
       this.employeeForm.reset();
       this.submitted = false;

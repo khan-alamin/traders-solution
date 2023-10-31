@@ -12,17 +12,17 @@ import { populateFormControl } from '../../../../utils/object.util';
 export class CustomerFormComponent implements OnInit {
   customerForm!: FormGroup;
   controls: any = {
-    "firstName": new FormControl('', [Validators.required]),
-    "lastName": new FormControl('', [Validators.required]),
+    "firstName": new FormControl('', []),
+    "lastName": new FormControl('', []),
     "email": new FormControl('', []),
-    "phone": new FormControl('', [Validators.required]),
-    "address": new FormControl('', [Validators.required]),
-    "billingAddress": new FormControl('', [Validators.required]),
-    "companyName": new FormControl('', [Validators.required]),
+    "phone": new FormControl('', []),
+    "address": new FormControl('', []),
+    "billingAddress": new FormControl('', []),
+    "companyName": new FormControl('', []),
     "tin": new FormControl('', []),
     "dateOfRegistration": new FormControl('', []),
     "customerCategory": new FormControl('', []),
-    "creditLimit": new FormControl(0, [Validators.required]),
+    "creditLimit": new FormControl(0, []),
   };
   submitted = false;
   endPoint = "customer";
@@ -33,7 +33,7 @@ export class CustomerFormComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.data = this.service.data;
-    if (this.data.id) {      
+    if (this.data.id) {
       populateFormControl(this.customerForm.controls, this.data);
     }
   }
@@ -47,12 +47,12 @@ export class CustomerFormComponent implements OnInit {
     if (this.customerForm.invalid) {
       return;
     }
-  
+
     const customerData: Customer = { ...this.customerForm.value };
     this.service.save(customerData, this.endPoint).subscribe(response => {
       this.customerForm.reset();
       this.submitted = false;
-     
+
     });
   }
 }

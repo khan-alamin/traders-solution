@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Role } from '../../../../model/auth/role.model';
 import { DataService } from '../../../../services/crud.service';
-import { Permission } from 'src/app/model/auth/permission.model';
+import { Permission } from '../../../../model/auth/permission.model';
 
 @Component({
   selector: 'app-role-form',
@@ -34,7 +34,7 @@ export class RoleFormComponent implements OnInit {
     }
     const permissions: Permission[] = this.roleForm.value.permissions
       .split(" */ *")
-      .map((p: string) => { 
+      .map((p: string) => {
         return { name: p, componentKey: p.toUpperCase() };
       });
     const roleData: Role = { ...this.roleForm.value, permissions: permissions };
