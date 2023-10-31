@@ -4,6 +4,7 @@ import { AppResponse } from '../../../../dto/response.dto';
 import { Permission } from '../../../../model/auth/permission.model';
 import { Product } from '../../../../model/config/product.model';
 import { DataService } from '../../../../services/crud.service';
+import { Page } from 'src/app/dto/page.dto';
 
 @Component({
   selector: 'app-product-list',
@@ -41,7 +42,7 @@ export class ProductListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('product').then((res: AppResponse) => {
+    this.service.getList('product').then((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

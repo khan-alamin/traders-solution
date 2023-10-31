@@ -2,6 +2,7 @@ package com.prologiccreations.traderssolution.controller.config;
 
 import com.prologiccreations.traderssolution.controller.super_classes.CrudController;
 import com.prologiccreations.traderssolution.dto.Response;
+import com.prologiccreations.traderssolution.dto.config.ManagerDto;
 import com.prologiccreations.traderssolution.model.config.Employee;
 import com.prologiccreations.traderssolution.service.super_classes.config.EmployeeService;
 import com.prologiccreations.traderssolution.utils.PageUtil;
@@ -10,7 +11,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -42,4 +46,11 @@ public class EmployeeController implements CrudController<Employee, Long> {
         Response response = employeeService.delete(id);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("managers")
+    public ResponseEntity<Response<List<ManagerDto>>> findAllManagers() {
+        Response<List<ManagerDto>> response = employeeService.findAllManagers();
+        return ResponseEntity.ok(response);
+    }
+
 }

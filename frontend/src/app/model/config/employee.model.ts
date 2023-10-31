@@ -23,7 +23,7 @@ export interface Employee extends AuditAbleModel {
     healthInsurance?:string;
     retirementPlans?:string;
     otherBenefits?:string;
-    performanceReviews?:string[];
+    performanceReview?:string;
     trainingRecords?:string;
     certifications?:string;
     terminationDate?:Date;
