@@ -48,6 +48,13 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatRadioModule} from '@angular/material/radio';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { NgxMatFileInputModule } from '@angular-material-components/file-input';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+
+
+
 
 
 
@@ -56,7 +63,7 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
   declarations: [
     AppComponent,
     RoleFormComponent,
-    RoleListComponent,    
+    RoleListComponent,
     CustomerListComponent,
     CustomerFormComponent,
     EmployeeFormComponent,
@@ -106,8 +113,12 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
     MatNativeDateModule,
     MatGridListModule,
     MatRadioModule,
-    
-    
+    NgxMatFileInputModule,
+    NgbModule
+
+
+
+
   ],
   providers: [provideAnimations()],
   bootstrap: [AppComponent]

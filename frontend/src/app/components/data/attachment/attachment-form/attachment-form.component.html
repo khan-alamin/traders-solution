@@ -1,1 +1,25 @@
-<p>attachment-form works!</p>
+<h1>Attachment Form</h1>
+<form [formGroup]="attachmentForm" (ngSubmit)="submitForm()">
+    <mat-grid-list cols="3" rowHeight="4:1">
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>File Name</mat-label>
+                    <input matInput formControlName="fileName" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>File Path</mat-label>
+                    <ngx-mat-file-input formControlName="filepath">
+                    </ngx-mat-file-input>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

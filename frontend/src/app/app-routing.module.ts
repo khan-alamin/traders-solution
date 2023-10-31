@@ -30,6 +30,8 @@ import { AuditAbleFormComponent } from './components/super/audit-able/audit-able
 import { AuditAbleListComponent } from './components/super/audit-able/audit-able-list/audit-able-list.component';
 import { BaseFormComponent } from './components/super/base/base-form/base-form.component';
 import { BaseListComponent } from './components/super/base/base-list/base-list.component';
+import { SettingFormComponent } from './components/config/setting/setting-form/setting-form.component';
+import { SettingListComponent } from './components/config/setting/setting-list/setting-list.component';
 
 const routes: Routes = [
   { path: 'role-form', component: RoleFormComponent },
@@ -40,6 +42,10 @@ const routes: Routes = [
   { path: 'employee-list', component: EmployeeListComponent },
   { path: 'product-form', component: ProductFormComponent },
   { path: 'product-list', component: ProductListComponent },
+  { path: 'setting-form', component: SettingFormComponent },
+  { path: 'setting-list', component: SettingListComponent },
+  { path: 'supplier-form', component: SupplierFormComponent  },
+  { path: 'supplier-list', component: SupplierListComponent },
   { path: 'team-form', component: TeamFormComponent },
   { path: 'team-list', component: TeamListComponent },
   { path: 'attachment-form', component: AttachmentFormComponent },
