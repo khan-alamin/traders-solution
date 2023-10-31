@@ -4,6 +4,7 @@ import { AppResponse } from '../../../../dto/response.dto';
 import { DataService } from '../../../../services/crud.service';
 import { Permission } from '../../../../model/auth/permission.model';
 import { Notification } from '../../../../model/data/notification.model';
+import { Page } from '../../../../dto/page.dto';
 
 @Component({
   selector: 'app-notification-list',
@@ -31,7 +32,7 @@ export class NotificationListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('notification').then((res: AppResponse) => {
+    this.service.getList('notification').then((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

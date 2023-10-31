@@ -4,6 +4,7 @@ import { AppResponse } from '../../../../dto/response.dto';
 import { Permission } from '../../../../model/auth/permission.model';
 import { Purchase } from '../../../../model/data/purchase.model';
 import { DataService } from '../../../../services/crud.service';
+import { Page } from '../../../..//dto/page.dto';
 
 @Component({
   selector: 'app-purchase-list',
@@ -29,7 +30,7 @@ export class PurchaseListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('purchase').then((res: AppResponse) => {
+    this.service.getList('purchase').then((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

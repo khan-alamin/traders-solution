@@ -4,6 +4,7 @@ import { AppResponse } from '../../../../dto/response.dto';
 import { Permission } from '../../../../model/auth/permission.model';
 import { AuditTrail } from '../../../../model/data/audit-trail.model';
 import { DataService } from '../../../../services/crud.service';
+import { Page } from 'src/app/dto/page.dto';
 
 @Component({
   selector: 'app-audit-trail-list',
@@ -27,7 +28,7 @@ export class AuditTrailListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('audittrail').then((res: AppResponse) => {
+    this.service.getList('audittrail').then((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );
