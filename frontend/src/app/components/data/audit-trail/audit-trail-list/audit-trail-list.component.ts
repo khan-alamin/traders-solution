@@ -1,10 +1,57 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppResponse } from '../../../../dto/response.dto';
+import { Permission } from '../../../../model/auth/permission.model';
+import { AuditTrail } from '../../../../model/data/audit-trail.model';
+import { DataService } from '../../../../services/crud.service';
 
 @Component({
   selector: 'app-audit-trail-list',
   templateUrl: './audit-trail-list.component.html',
   styleUrls: ['./audit-trail-list.component.scss']
 })
-export class AuditTrailListComponent {
+export class AuditTrailListComponent implements OnInit {
+
+  displayedColumns: string[] = [
+    'timestamp',
+    'actionEventType',
+    'userSystem',
+    'affectedEntity',
+    'iPAddress',
+    'userAgent',
+    'statusOutcome',
+    'additionalMetadata',
+    'actions'];
+  dataSource: AuditTrail[] = [];
+
+  constructor(private service: DataService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.service.getList('audittrail').then((res: AppResponse) => {
+      this.dataSource = res.data.content
+    }
+    );
+  }
+
+  delete(index: number) {
+    let id = this.dataSource[index].id as number;
+    this.service.delete(id, "audittrail").subscribe(() => {
+      const newData = this.dataSource.filter((s, i) => i != index);
+      this.dataSource = newData;
+    })
+  }
+
+  edit(index: number) {
+    this.service.data = { ...this.dataSource[index] };
+    this.router.navigate(['/audittrail-form']);
+  }
+
+
+
+  getPermissionAsList(permissions: Permission[]): string {
+    return permissions.map((p: Permission) => p.name).join(", ");
+  }
+
+
 
 }

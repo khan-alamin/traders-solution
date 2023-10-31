@@ -1,1 +1,109 @@
-<p>notification-form works!</p>
+<h1>Notification Form</h1>
+<form [formGroup]="notificationForm" (ngSubmit)="submitForm()">
+  <mat-grid-list cols="3" rowHeight="4:1">
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>recipient</mat-label>
+          <input matInput formControlName="recipient" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>message</mat-label>
+          <input matInput formControlName="message" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>notificationType</mat-label>
+          <input matInput formControlName="notificationType" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>timestamp</mat-label>
+          <textarea matInput formControlName="timestamp"></textarea>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>status</mat-label>
+          <input matInput formControlName="status" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>linkURL</mat-label>
+          <input matInput formControlName="linkURL" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>associatedEntity</mat-label>
+          <input matInput formControlName="associatedEntity" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>senderUserID</mat-label>
+          <input matInput formControlName="senderUserID" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>priorityLevel</mat-label>
+          <input matInput formControlName="priorityLevel" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>readTimestamp</mat-label>
+          <input matInput formControlName="readTimestamp" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+          <mat-form-field>
+              <mat-label>expirationDate</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="expirationDate">
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </div>
+  </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>additionalMetadata</mat-label>
+          <input matInput formControlName="additionalMetadata" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

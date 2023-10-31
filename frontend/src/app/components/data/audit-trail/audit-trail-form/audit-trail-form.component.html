@@ -1,1 +1,74 @@
-<p>audit-trail-form works!</p>
+<h1>AuditTrail Form</h1>
+<form [formGroup]="audittrailForm" (ngSubmit)="submitForm()">
+  <mat-grid-list cols="3" rowHeight="4:1">
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>timestamp</mat-label>
+          <input matInput formControlName="timestamp" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>actionEventType</mat-label>
+          <input matInput formControlName="actionEventType" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>userSystem</mat-label>
+          <input matInput formControlName="userSystem" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>affectedEntity</mat-label>
+          <textarea matInput formControlName="affectedEntity"></textarea>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>iPAddress</mat-label>
+          <input matInput formControlName="iPAddress" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>userAgent</mat-label>
+          <input matInput formControlName="userAgent" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>statusOutcome</mat-label>
+          <input matInput formControlName="statusOutcome" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label>additionalMetadata</mat-label>
+          <input matInput formControlName="additionalMetadata" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
