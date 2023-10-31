@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppResponse } from 'src/app/dto/response.dto';
-import { Permission } from 'src/app/model/auth/permission.model';
-import { Product } from 'src/app/model/config/product.model';
-import { DataService } from 'src/app/services/crud.service';
+import { AppResponse } from '../../../../dto/response.dto';
+import { Permission } from '../../../../model/auth/permission.model';
+import { Product } from '../../../../model/config/product.model';
+import { DataService } from '../../../../services/crud.service';
 
 @Component({
   selector: 'app-product-list',

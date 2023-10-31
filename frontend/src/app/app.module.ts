@@ -16,8 +16,6 @@ import { EmployeeFormComponent } from './components/config/employee/employee-for
 import { EmployeeListComponent } from './components/config/employee/employee-list/employee-list.component';
 import { ProductFormComponent } from './components/config/product/product-form/product-form.component';
 import { ProductListComponent } from './components/config/product/product-list/product-list.component';
-import { SettingFormComponent } from './components/config/setting/setting-form/setting-form.component';
-import { SettingListComponent } from './components/config/setting/setting-list/setting-list.component';
 import { SupplierFormComponent } from './components/config/supplier/supplier-form/supplier-form.component';
 import { SupplierListComponent } from './components/config/supplier/supplier-list/supplier-list.component';
 import { TeamFormComponent } from './components/config/team/team-form/team-form.component';
@@ -26,20 +24,12 @@ import { AttachmentFormComponent } from './components/data/attachment/attachment
 import { AttachmentListComponent } from './components/data/attachment/attachment-list/attachment-list.component';
 import { AuditTrailFormComponent } from './components/data/audit-trail/audit-trail-form/audit-trail-form.component';
 import { AuditTrailListComponent } from './components/data/audit-trail/audit-trail-list/audit-trail-list.component';
-import { InventoryFormComponent } from './components/data/inventory/inventory-form/inventory-form.component';
-import { InventoryListComponent } from './components/data/inventory/inventory-list/inventory-list.component';
 import { NotificationFormComponent } from './components/data/notification/notification-form/notification-form.component';
 import { NotificationListComponent } from './components/data/notification/notification-list/notification-list.component';
 import { OrderFormComponent } from './components/data/order/order-form/order-form.component';
 import { OrderListComponent } from './components/data/order/order-list/order-list.component';
 import { PurchaseFormComponent } from './components/data/purchase/purchase-form/purchase-form.component';
 import { PurchaseListComponent } from './components/data/purchase/purchase-list/purchase-list.component';
-import { ApprovableFormComponent } from './components/super/approvable/approvable-form/approvable-form.component';
-import { ApprovableListComponent } from './components/super/approvable/approvable-list/approvable-list.component';
-import { AuditAbleFormComponent } from './components/super/audit-able/audit-able-form/audit-able-form.component';
-import { AuditAbleListComponent } from './components/super/audit-able/audit-able-list/audit-able-list.component';
-import { BaseFormComponent } from './components/super/base/base-form/base-form.component';
-import { BaseListComponent } from './components/super/base/base-list/base-list.component';
 import { CustomerFormComponent } from './components/config/customer/customer-form/customer-form.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -47,7 +37,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatRadioModule} from '@angular/material/radio';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -70,8 +59,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EmployeeListComponent,
     ProductFormComponent,
     ProductListComponent,
-    SettingFormComponent,
-    SettingListComponent,
     SupplierFormComponent,
     SupplierListComponent,
     TeamFormComponent,
@@ -80,21 +67,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AttachmentListComponent,
     AuditTrailFormComponent,
     AuditTrailListComponent,
-    InventoryFormComponent,
-    InventoryListComponent,
     NotificationFormComponent,
     NotificationListComponent,
     OrderFormComponent,
     OrderListComponent,
     PurchaseFormComponent,
     PurchaseListComponent,
-    ApprovableFormComponent,
-    ApprovableListComponent,
-    AuditAbleFormComponent,
-    AuditAbleListComponent,
-    BaseFormComponent,
-    BaseListComponent,
-    DashboardComponent
+
 
   ],
   imports: [

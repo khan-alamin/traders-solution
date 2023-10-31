@@ -1,4 +1,4 @@
-<h1>Customer Form</h1>
+<!-- <h1>Customer Form</h1>
 <form [formGroup]="customerForm" (ngSubmit)="submitForm()">
     <mat-grid-list cols="3" rowHeight="4:1">
         <mat-grid-tile>
@@ -71,7 +71,7 @@
                 <mat-form-field>
                     <mat-label>Date of Registration</mat-label>
                     <input matInput [matDatepicker]="picker" formControlName="dateOfRegistration">
-                    <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+
                     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
@@ -96,4 +96,86 @@
     </mat-grid-list>
 
     <button mat-raised-button color="primary" type="submit">Submit</button>
-</form>
+</form> -->
+
+<div class="container mt-5">
+  <h1>Customer Form</h1>
+  <form [formGroup]="customerForm" (ngSubmit)="submitForm()">
+    <div class="row">
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstName" formControlName="firstName">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastName" formControlName="lastName">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="text" class="form-control" id="phone" formControlName="phone">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <textarea class="form-control" id="address" formControlName="address"></textarea>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="billingAddress" class="form-label">Billing Address</label>
+          <textarea class="form-control" id="billingAddress" formControlName="billingAddress"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="companyName" class="form-label">Company Name</label>
+          <input type="text" class="form-control" id="companyName" formControlName="companyName">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="tin" class="form-label">TIN</label>
+          <input type="text" class="form-control" id="tin" formControlName="tin">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="dateOfRegistration" class="form-label">Date of Registration</label>
+          <input type="text" class="form-control" id="dateOfRegistration" formControlName="dateOfRegistration">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="customerCategory" class="form-label">Customer Category</label>
+          <input type="text" class="form-control" id="customerCategory" formControlName="customerCategory">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="creditLimit" class="form-label">Credit Limit</label>
+          <input type="text" class="form-control" id="creditLimit" formControlName="creditLimit">
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+

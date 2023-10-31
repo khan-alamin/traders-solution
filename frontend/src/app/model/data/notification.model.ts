@@ -1,6 +1,6 @@
-import { AuditAbleModel } from "../super-model/auditable.model";
+import { BaseModel } from "../super-model/base.model";
 
-export interface Notification extends AuditAbleModel {
+export interface Notification extends BaseModel {
     recipient?:string;
     message?:string;
     notificationType?:string;

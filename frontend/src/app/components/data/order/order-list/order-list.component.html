@@ -1,1 +1,106 @@
-<p>order-list works!</p>
+<div style="display: flex; justify-content: space-between;">
+  <h2>Supplier List</h2>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="OrderDate">
+      <th mat-header-cell *matHeaderCellDef>OrderDate</th>
+      <td mat-cell *matCellDef="let element"> {{ element.OrderDate }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="customer">
+      <th mat-header-cell *matHeaderCellDef>customer</th>
+      <td mat-cell *matCellDef="let element"> {{ element.customer }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="employee">
+      <th mat-header-cell *matHeaderCellDef> employee </th>
+      <td mat-cell *matCellDef="let element"> {{ element.employee }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="paymentMethod">
+      <th mat-header-cell *matHeaderCellDef> paymentMethod </th>
+      <td mat-cell *matCellDef="let element"> {{ element.paymentMethod }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="paymentDate">
+      <th mat-header-cell *matHeaderCellDef> paymentDate </th>
+      <td mat-cell *matCellDef="let element"> {{ element.paymentDate }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="shippingAddress">
+      <th mat-header-cell *matHeaderCellDef> shippingAddress </th>
+      <td mat-cell *matCellDef="let element"> {{ element.shippingAddress }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="billingAddress">
+      <th mat-header-cell *matHeaderCellDef> billingAddress </th>
+      <td mat-cell *matCellDef="let element"> {{ element.billingAddress }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="orderStatus">
+      <th mat-header-cell *matHeaderCellDef> orderStatus </th>
+      <td mat-cell *matCellDef="let element"> {{ element.orderStatus }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="totalAmount">
+      <th mat-header-cell *matHeaderCellDef> totalAmount </th>
+      <td mat-cell *matCellDef="let element"> {{ element.totalAmount }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="taxAmount">
+      <th mat-header-cell *matHeaderCellDef> taxAmount </th>
+      <td mat-cell *matCellDef="let element"> {{ element.taxAmount }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="discountAmount">
+      <th mat-header-cell *matHeaderCellDef> discountAmount </th>
+      <td mat-cell *matCellDef="let element"> {{ element.discountAmount }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="shippingFee">
+      <th mat-header-cell *matHeaderCellDef> shippingFee</th>
+      <td mat-cell *matCellDef="let element"> {{ element.shippingFee }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="invoiceReceiptNumber">
+      <th mat-header-cell *matHeaderCellDef> invoiceReceiptNumber </th>
+      <td mat-cell *matCellDef="let element"> {{ element.invoiceReceiptNumber }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="notesComments">
+      <th mat-header-cell *matHeaderCellDef> notesComments </th>
+      <td mat-cell *matCellDef="let element"> {{element.notesComments}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="deliveryDate">
+      <th mat-header-cell *matHeaderCellDef> deliveryDate </th>
+      <td mat-cell *matCellDef="let element"> {{ element.deliveryDate }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="returnExchangeRequest">
+      <th mat-header-cell *matHeaderCellDef> returnExchangeRequest </th>
+      <td mat-cell *matCellDef="let element"> {{ element.returnExchangeRequest }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="returnExchangeDate">
+      <th mat-header-cell *matHeaderCellDef> returnExchangeDate </th>
+      <td mat-cell *matCellDef="let element"> {{ element.returnExchangeDate }} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let i = index;">
+          <button mat-icon-button color="warn" (click)="delete(i)">
+              <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" (click)="edit(i)">
+              <mat-icon>edit</mat-icon>
+          </button>
+      </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

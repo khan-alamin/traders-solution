@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public abstract class ApprovableEntity extends AuditableEntity {
     @JsonIgnore
-    private boolean isApproved;
+    private boolean approved;
     @JsonIgnore
     private String approvedBy;
     @JsonIgnore

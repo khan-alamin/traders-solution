@@ -2,7 +2,6 @@ package com.prologiccreations.traderssolution.model.data;
 
 import com.prologiccreations.traderssolution.model.config.Product;
 import com.prologiccreations.traderssolution.model.config.Supplier;
-import com.prologiccreations.traderssolution.model.data.Attachment;
 import com.prologiccreations.traderssolution.model.super_classes.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -26,6 +25,6 @@ public class Purchase extends AuditableEntity {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private Supplier supplier;
     private LocalDate purchaseDate;
-    @ManyToMany(cascade = CascadeType.REFRESH)
+    @OneToMany(cascade = CascadeType.REFRESH)
     private List<Attachment> attachments;
 }

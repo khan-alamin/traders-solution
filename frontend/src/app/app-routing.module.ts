@@ -16,22 +16,12 @@ import { AttachmentFormComponent } from './components/data/attachment/attachment
 import { AttachmentListComponent } from './components/data/attachment/attachment-list/attachment-list.component';
 import { AuditTrailFormComponent } from './components/data/audit-trail/audit-trail-form/audit-trail-form.component';
 import { AuditTrailListComponent } from './components/data/audit-trail/audit-trail-list/audit-trail-list.component';
-import { InventoryFormComponent } from './components/data/inventory/inventory-form/inventory-form.component';
-import { InventoryListComponent } from './components/data/inventory/inventory-list/inventory-list.component';
 import { NotificationFormComponent } from './components/data/notification/notification-form/notification-form.component';
 import { NotificationListComponent } from './components/data/notification/notification-list/notification-list.component';
 import { OrderFormComponent } from './components/data/order/order-form/order-form.component';
 import { OrderListComponent } from './components/data/order/order-list/order-list.component';
 import { PurchaseFormComponent } from './components/data/purchase/purchase-form/purchase-form.component';
 import { PurchaseListComponent } from './components/data/purchase/purchase-list/purchase-list.component';
-import { ApprovableFormComponent } from './components/super/approvable/approvable-form/approvable-form.component';
-import { ApprovableListComponent } from './components/super/approvable/approvable-list/approvable-list.component';
-import { AuditAbleFormComponent } from './components/super/audit-able/audit-able-form/audit-able-form.component';
-import { AuditAbleListComponent } from './components/super/audit-able/audit-able-list/audit-able-list.component';
-import { BaseFormComponent } from './components/super/base/base-form/base-form.component';
-import { BaseListComponent } from './components/super/base/base-list/base-list.component';
-import { SettingFormComponent } from './components/config/setting/setting-form/setting-form.component';
-import { SettingListComponent } from './components/config/setting/setting-list/setting-list.component';
 
 const routes: Routes = [
   { path: 'role-form', component: RoleFormComponent },
@@ -42,8 +32,6 @@ const routes: Routes = [
   { path: 'employee-list', component: EmployeeListComponent },
   { path: 'product-form', component: ProductFormComponent },
   { path: 'product-list', component: ProductListComponent },
-  { path: 'setting-form', component: SettingFormComponent },
-  { path: 'setting-list', component: SettingListComponent },
   { path: 'supplier-form', component: SupplierFormComponent  },
   { path: 'supplier-list', component: SupplierListComponent },
   { path: 'team-form', component: TeamFormComponent },
@@ -52,21 +40,12 @@ const routes: Routes = [
   { path: 'attachment-list', component: AttachmentListComponent },
   { path: 'audittrail-form', component: AuditTrailFormComponent },
   { path: 'audittrail-list', component: AuditTrailListComponent },
-  { path: 'inventory-form', component: InventoryFormComponent },
-  { path: 'inventory-list', component: InventoryListComponent },
   { path: 'notification-form', component: NotificationFormComponent },
   { path: 'notification-list', component: NotificationListComponent },
   { path: 'order-form', component: OrderFormComponent },
   { path: 'order-list', component: OrderListComponent },
   { path: 'purchase-form', component: PurchaseFormComponent },
-  { path: 'purchase-list', component: PurchaseListComponent },
-  { path: 'approvable-form', component: ApprovableFormComponent },
-  { path: 'approvable-list', component: ApprovableListComponent },
-  { path: 'auditable-form', component: AuditAbleFormComponent },
-  { path: 'auditable-list', component: AuditAbleListComponent },
-  { path: 'base-form', component: BaseFormComponent },
-  { path: 'base-list', component: BaseListComponent },
-
+  { path: 'purchase-list', component: PurchaseListComponent }
 
 ];
 

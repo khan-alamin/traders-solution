@@ -1,1 +1,94 @@
-<p>purchase-form works!</p>
+<h1>Purchase Form</h1>
+<form [formGroup]="purchaseForm" (ngSubmit)="submitForm()">
+    <mat-grid-list cols="2" rowHeight="6:1">
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>product</mat-label>
+                    <input matInput formControlName="product" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>costPrice</mat-label>
+                    <input matInput formControlName="costPrice" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>vat</mat-label>
+                    <input matInput formControlName="vat" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>discount</mat-label>
+                    <textarea matInput formControlName="discount"></textarea>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>quantity</mat-label>
+                    <input matInput formControlName="quantity" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>weight</mat-label>
+                    <input matInput formControlName="weight" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>total</mat-label>
+                    <input matInput formControlName="total" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>supplier</mat-label>
+                    <input matInput formControlName="supplier" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="input-container">
+              <mat-form-field>
+                  <mat-label>purchaseDate</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="purchaseDate">
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+          </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <div class="input-container">
+          <mat-form-field>
+            <mat-label>attachments</mat-label>
+            <ngx-mat-file-input formControlName="attachments"> </ngx-mat-file-input>
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
