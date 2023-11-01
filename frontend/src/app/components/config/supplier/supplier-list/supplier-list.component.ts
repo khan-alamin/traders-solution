@@ -4,6 +4,7 @@ import { AppResponse } from '../../../../dto/response.dto';
 import { Permission } from '../../../../model/auth/permission.model';
 import { Supplier } from '../../../../model/config/supplier.model';
 import { DataService } from '../../../../services/crud.service';
+import { Page } from 'src/app/dto/page.dto';
 
 @Component({
   selector: 'app-supplier-list',
@@ -36,7 +37,7 @@ export class SupplierListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('supplier').then((res: AppResponse) => {
+    this.service.getList('supplier').then((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );
