@@ -4,6 +4,7 @@ import { DataService } from '../../../../services/crud.service';
 import { Router } from '@angular/router';
 import { Permission } from '../../../../model/auth/permission.model';
 import { AppResponse } from '../../../../dto/response.dto';
+import { Page } from 'src/app/dto/page.dto';
 
 @Component({
   selector: 'app-role-list',
@@ -18,7 +19,7 @@ export class RoleListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('role').then((res: AppResponse) => {
+    this.service.getList('role').then((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

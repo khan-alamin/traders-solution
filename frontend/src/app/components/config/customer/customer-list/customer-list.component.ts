@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AppResponse } from '../../../../dto/response.dto';
 import { Customer } from 'src/app/model/config/customer.model';
 import { DataService } from 'src/app/services/crud.service';
+import { Page } from 'src/app/dto/page.dto';
 
 @Component({
   selector: 'app-customer-list',
@@ -17,7 +18,7 @@ export class CustomerListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('customer').then((res: AppResponse) => {
+    this.service.getList('customer').then((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );
@@ -36,7 +37,7 @@ export class CustomerListComponent implements OnInit {
     this.router.navigate(['/customer-form']);
   }
 
-  
+
 
 }
 

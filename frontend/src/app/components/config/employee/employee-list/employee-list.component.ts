@@ -4,6 +4,7 @@ import { AppResponse } from '../../../../dto/response.dto';
 import { Employee } from '../../../../model/config/employee.model';
 import { DataService } from '../../../../services/crud.service';
 import { Permission } from 'src/app/model/auth/permission.model';
+import { Page } from 'src/app/dto/page.dto';
 
 @Component({
   selector: 'app-employee-list',
@@ -18,7 +19,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('employee').then((res: AppResponse) => {
+    this.service.getList('employee').then((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );
@@ -43,6 +44,6 @@ export class EmployeeListComponent implements OnInit {
     return permissions.map((p: Permission) => p.name).join(", ");
   }
 
-  
+
 
 }
