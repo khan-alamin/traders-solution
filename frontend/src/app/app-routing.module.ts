@@ -22,8 +22,13 @@ import { OrderFormComponent } from './components/data/order/order-form/order-for
 import { OrderListComponent } from './components/data/order/order-list/order-list.component';
 import { PurchaseFormComponent } from './components/data/purchase/purchase-form/purchase-form.component';
 import { PurchaseListComponent } from './components/data/purchase/purchase-list/purchase-list.component';
+import { HomeComponent } from './admin-panel/home/home.component';
+import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'role-form', component: RoleFormComponent },
   { path: 'role-list', component: RoleListComponent },
   { path: 'customer-form', component: CustomerFormComponent },
