@@ -39,16 +39,16 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import {MatRadioModule} from '@angular/material/radio';
 import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
-import { HeaderComponent } from './admin-panel/header/header.component';
-import { HomeComponent } from './admin-panel/home/home.component';
-import { SidenavComponent } from './admin-panel/sidenav/sidenav.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-
+import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
+import { SidenavComponent } from './admin-panel/sidenav/sidenav.component';
+import { HeaderComponent } from './admin-panel/header/header.component';
+import { HomeComponent } from './admin-panel/home/home.component';
+import {MatTreeModule} from '@angular/material/tree';
 
 
 
@@ -82,9 +82,9 @@ import { MatListModule } from '@angular/material/list';
     PurchaseFormComponent,
     PurchaseListComponent,
     DashboardComponent,
+    SidenavComponent,
     HeaderComponent,
     HomeComponent,
-    SidenavComponent,
 
 
   ],
@@ -110,7 +110,8 @@ import { MatListModule } from '@angular/material/list';
     MatGridListModule,
     MatRadioModule,
     NgxMatFileInputModule,
-    NgbModule
+    NgbModule,
+    MatTreeModule
 
 
 
