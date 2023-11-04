@@ -24,9 +24,13 @@ import { PurchaseFormComponent } from './components/data/purchase/purchase-form/
 import { PurchaseListComponent } from './components/data/purchase/purchase-list/purchase-list.component';
 import { HomeComponent } from './admin-panel/home/home.component';
 import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'role-form', component: RoleFormComponent },
   { path: 'role-list', component: RoleListComponent },

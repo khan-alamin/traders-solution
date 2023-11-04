@@ -49,6 +49,8 @@ import { SidenavComponent } from './admin-panel/sidenav/sidenav.component';
 import { HeaderComponent } from './admin-panel/header/header.component';
 import { HomeComponent } from './admin-panel/home/home.component';
 import {MatTreeModule} from '@angular/material/tree';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -84,6 +86,8 @@ import {MatTreeModule} from '@angular/material/tree';
     SidenavComponent,
     HeaderComponent,
     HomeComponent,
+    AboutComponent,
+    ContactComponent,
 
 
   ],
