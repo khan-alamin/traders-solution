@@ -12,6 +12,14 @@
     <mat-icon>dashboard</mat-icon> Dashboard
   </a>
 
+  <button mat-button [matMenuTriggerFor]="menu">Role</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item  routerLink="/role-form">Form</button>
+  <button mat-menu-item routerLink="/role-list">List</button>
+</mat-menu>
+
+
+
   <a mat-list-item routerLinkActive="list-item-active" routerLink="/role-form"
     >Role-Form
   </a>
