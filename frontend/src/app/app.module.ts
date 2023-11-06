@@ -51,6 +51,7 @@ import { HomeComponent } from './admin-panel/home/home.component';
 import {MatTreeModule} from '@angular/material/tree';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { SidemenuComponent } from './admin-panel/sidemenu/sidemenu.component';
 
 
 
@@ -88,6 +89,7 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
+    SidemenuComponent,
 
 
   ],
