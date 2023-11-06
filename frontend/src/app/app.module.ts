@@ -20,8 +20,6 @@ import { SupplierFormComponent } from './components/config/supplier/supplier-for
 import { SupplierListComponent } from './components/config/supplier/supplier-list/supplier-list.component';
 import { TeamFormComponent } from './components/config/team/team-form/team-form.component';
 import { TeamListComponent } from './components/config/team/team-list/team-list.component';
-import { AttachmentFormComponent } from './components/data/attachment/attachment-form/attachment-form.component';
-import { AttachmentListComponent } from './components/data/attachment/attachment-list/attachment-list.component';
 import { AuditTrailFormComponent } from './components/data/audit-trail/audit-trail-form/audit-trail-form.component';
 import { AuditTrailListComponent } from './components/data/audit-trail/audit-trail-list/audit-trail-list.component';
 import { NotificationFormComponent } from './components/data/notification/notification-form/notification-form.component';
@@ -72,8 +70,6 @@ import { ContactComponent } from './contact/contact.component';
     SupplierListComponent,
     TeamFormComponent,
     TeamListComponent,
-    AttachmentFormComponent,
-    AttachmentListComponent,
     AuditTrailFormComponent,
     AuditTrailListComponent,
     NotificationFormComponent,
@@ -87,7 +83,7 @@ import { ContactComponent } from './contact/contact.component';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent,
+    ContactComponent
 
 
   ],
