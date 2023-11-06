@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.List;
+
 
 @Getter
 @Setter
@@ -25,6 +25,5 @@ public class Purchase extends AuditableEntity {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private Supplier supplier;
     private LocalDate purchaseDate;
-    @OneToMany(cascade = CascadeType.REFRESH)
-    private List<Attachment> attachments;
+    private String attachments;
 }

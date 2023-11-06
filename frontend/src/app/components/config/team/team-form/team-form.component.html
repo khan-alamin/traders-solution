@@ -1,4 +1,4 @@
-<h1>Team Form</h1>
+<!-- <h1>Team Form</h1>
 <form [formGroup]="teamForm" (ngSubmit)="submitForm()">
     <mat-grid-list cols="1" rowHeight="10:1">
         <mat-grid-tile>
@@ -30,4 +30,23 @@
     </mat-grid-list>
 
     <button mat-raised-button color="primary" type="submit">Submit</button>
+</form> -->
+
+
+<h1>Team Form</h1>
+<form>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+        <label for="leader">Leader</label>
+        <input type="text" class="form-control" id="leader">
+    </div>
+    <div class="form-group">
+        <label for="members">Members</label>
+        <input type="text" class="form-control" id="members">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
 </form>

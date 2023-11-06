@@ -20,8 +20,6 @@ import { SupplierFormComponent } from './components/config/supplier/supplier-for
 import { SupplierListComponent } from './components/config/supplier/supplier-list/supplier-list.component';
 import { TeamFormComponent } from './components/config/team/team-form/team-form.component';
 import { TeamListComponent } from './components/config/team/team-list/team-list.component';
-import { AttachmentFormComponent } from './components/data/attachment/attachment-form/attachment-form.component';
-import { AttachmentListComponent } from './components/data/attachment/attachment-list/attachment-list.component';
 import { AuditTrailFormComponent } from './components/data/audit-trail/audit-trail-form/audit-trail-form.component';
 import { AuditTrailListComponent } from './components/data/audit-trail/audit-trail-list/audit-trail-list.component';
 import { NotificationFormComponent } from './components/data/notification/notification-form/notification-form.component';
@@ -49,7 +47,8 @@ import { SidenavComponent } from './admin-panel/sidenav/sidenav.component';
 import { HeaderComponent } from './admin-panel/header/header.component';
 import { HomeComponent } from './admin-panel/home/home.component';
 import {MatTreeModule} from '@angular/material/tree';
-
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -71,8 +70,6 @@ import {MatTreeModule} from '@angular/material/tree';
     SupplierListComponent,
     TeamFormComponent,
     TeamListComponent,
-    AttachmentFormComponent,
-    AttachmentListComponent,
     AuditTrailFormComponent,
     AuditTrailListComponent,
     NotificationFormComponent,
@@ -85,6 +82,8 @@ import {MatTreeModule} from '@angular/material/tree';
     SidenavComponent,
     HeaderComponent,
     HomeComponent,
+    AboutComponent,
+    ContactComponent,
 
 
   ],

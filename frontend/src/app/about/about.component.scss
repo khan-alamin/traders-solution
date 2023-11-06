@@ -1,0 +1,28 @@
+// Define variables for reusing colors and other values
+$primary-color: #007BFF;
+$font-family: Arial, sans-serif;
+
+// Style headings
+h2 {
+  font-size: 24px;
+  color: $primary-color;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+// Style paragraphs
+p {
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+// Add some specific styles to the last paragraph
+p:last-of-type {
+  font-weight: bold;
+  color: $primary-color;
+}
+

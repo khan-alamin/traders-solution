@@ -12,8 +12,6 @@ import { SupplierFormComponent } from './components/config/supplier/supplier-for
 import { SupplierListComponent } from './components/config/supplier/supplier-list/supplier-list.component';
 import { TeamFormComponent } from './components/config/team/team-form/team-form.component';
 import { TeamListComponent } from './components/config/team/team-list/team-list.component';
-import { AttachmentFormComponent } from './components/data/attachment/attachment-form/attachment-form.component';
-import { AttachmentListComponent } from './components/data/attachment/attachment-list/attachment-list.component';
 import { AuditTrailFormComponent } from './components/data/audit-trail/audit-trail-form/audit-trail-form.component';
 import { AuditTrailListComponent } from './components/data/audit-trail/audit-trail-list/audit-trail-list.component';
 import { NotificationFormComponent } from './components/data/notification/notification-form/notification-form.component';
@@ -24,9 +22,13 @@ import { PurchaseFormComponent } from './components/data/purchase/purchase-form/
 import { PurchaseListComponent } from './components/data/purchase/purchase-list/purchase-list.component';
 import { HomeComponent } from './admin-panel/home/home.component';
 import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'role-form', component: RoleFormComponent },
   { path: 'role-list', component: RoleListComponent },
@@ -40,8 +42,6 @@ const routes: Routes = [
   { path: 'supplier-list', component: SupplierListComponent },
   { path: 'team-form', component: TeamFormComponent },
   { path: 'team-list', component: TeamListComponent },
-  { path: 'attachment-form', component: AttachmentFormComponent },
-  { path: 'attachment-list', component: AttachmentListComponent },
   { path: 'audittrail-form', component: AuditTrailFormComponent },
   { path: 'audittrail-list', component: AuditTrailListComponent },
   { path: 'notification-form', component: NotificationFormComponent },
