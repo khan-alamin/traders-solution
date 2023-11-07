@@ -1,4 +1,4 @@
-<h1>AuditTrail Form</h1>
+<!-- <h1>AuditTrail Form</h1>
 <form [formGroup]="audittrailForm" (ngSubmit)="submitForm()">
   <mat-grid-list cols="3" rowHeight="4:1">
     <mat-grid-tile>
@@ -71,4 +71,64 @@
   </mat-grid-list>
 
   <button mat-raised-button color="primary" type="submit">Submit</button>
+</form> -->
+
+<div class="container mt-5">
+<h1>AuditTrail Form</h1>
+<form>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="timestamp">Timestamp</label>
+        <input type="text" class="form-control" id="timestamp" name="timestamp">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="actionEventType">Action Event Type</label>
+        <input type="text" class="form-control" id="actionEventType" name="actionEventType">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="userSystem">User System</label>
+        <input type="text" class="form-control" id="userSystem" name="userSystem">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="affectedEntity">Affected Entity</label>
+    <textarea class="form-control" id="affectedEntity" name="affectedEntity"></textarea>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="iPAddress">IP Address</label>
+        <input type="text" class="form-control" id="iPAddress" name="iPAddress">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="userAgent">User Agent</label>
+        <input type="text" class="form-control" id="userAgent" name="userAgent">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="statusOutcome">Status Outcome</label>
+        <input type="text" class="form-control" id="statusOutcome" name="statusOutcome">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="additionalMetadata">Additional Metadata</label>
+    <input type="text" class="form-control" id="additionalMetadata" name="additionalMetadata">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+</div>

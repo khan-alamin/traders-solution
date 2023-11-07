@@ -14,8 +14,6 @@ import { TeamFormComponent } from './components/config/team/team-form/team-form.
 import { TeamListComponent } from './components/config/team/team-list/team-list.component';
 import { AuditTrailFormComponent } from './components/data/audit-trail/audit-trail-form/audit-trail-form.component';
 import { AuditTrailListComponent } from './components/data/audit-trail/audit-trail-list/audit-trail-list.component';
-import { NotificationFormComponent } from './components/data/notification/notification-form/notification-form.component';
-import { NotificationListComponent } from './components/data/notification/notification-list/notification-list.component';
 import { OrderFormComponent } from './components/data/order/order-form/order-form.component';
 import { OrderListComponent } from './components/data/order/order-list/order-list.component';
 import { PurchaseFormComponent } from './components/data/purchase/purchase-form/purchase-form.component';
@@ -44,8 +42,6 @@ const routes: Routes = [
   { path: 'team-list', component: TeamListComponent },
   { path: 'audittrail-form', component: AuditTrailFormComponent },
   { path: 'audittrail-list', component: AuditTrailListComponent },
-  { path: 'notification-form', component: NotificationFormComponent },
-  { path: 'notification-list', component: NotificationListComponent },
   { path: 'order-form', component: OrderFormComponent },
   { path: 'order-list', component: OrderListComponent },
   { path: 'purchase-form', component: PurchaseFormComponent },

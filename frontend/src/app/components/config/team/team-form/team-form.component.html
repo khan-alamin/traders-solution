@@ -32,9 +32,9 @@
     <button mat-raised-button color="primary" type="submit">Submit</button>
 </form> -->
 
-
+<div class="container mt-5">
 <h1>Team Form</h1>
-<form>
+<form [formGroup]="teamForm" (ngSubmit)="submitForm()">
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name">
@@ -50,3 +50,4 @@
 
     <button class="btn btn-primary" type="submit">Submit</button>
 </form>
+</div>
