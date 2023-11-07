@@ -1,11 +1,81 @@
-
-h1
-{
-  margin-left: 10px;
+/* Adjust the container width and margin */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-form
-{
-margin-left: 10px;
+/* Style the heading */
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
 
+/* Style form groups */
+.form-group {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+/* Style labels */
+label {
+  font-weight: 600;
+}
+
+/* Style form controls */
+.form-control {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  transition: border-color 0.2s;
+  &:focus {
+    border-color: #007bff;
+  }
+}
+
+/* Style textareas */
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  transition: border-color 0.2s;
+  min-height: 120px;
+  resize: vertical;
+  &:focus {
+    border-color: #007bff;
+  }
+}
+
+/* Style the primary button */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+/* Adjust column widths for responsiveness */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  .col-md-4 {
+    flex: 0 0 calc(33.333% - 10px); /* Adjust the width as needed */
+    padding: 0 10px;
+  }
+
+  .col-md-12 {
+    flex: 0 0 100%;
+    padding: 0 10px;
+  }
 }

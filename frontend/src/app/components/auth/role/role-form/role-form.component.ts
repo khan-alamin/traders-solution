@@ -23,7 +23,7 @@ export class RoleFormComponent implements OnInit {
   createForm() {
     this.roleForm = this.formBuilder.group({
       name: ['', Validators.required],
-      permissions: ['']
+      permissions: ['',Validators.required]
     });
   }
 

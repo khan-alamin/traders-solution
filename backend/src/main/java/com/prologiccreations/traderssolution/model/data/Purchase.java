@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Setter
 @Entity
 public class Purchase extends AuditableEntity {
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private Product product;
     private double costPrice;
     private double vat;
