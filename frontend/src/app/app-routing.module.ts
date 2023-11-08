@@ -22,6 +22,8 @@ import { HomeComponent } from './admin-panel/home/home.component';
 import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { DepartmentsFormComponent } from './components/config/departments/departments-form/departments-form.component';
+import { DepartmentsListComponent } from './components/config/departments/departments-list/departments-list.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -45,7 +47,9 @@ const routes: Routes = [
   { path: 'order-form', component: OrderFormComponent },
   { path: 'order-list', component: OrderListComponent },
   { path: 'purchase-form', component: PurchaseFormComponent },
-  { path: 'purchase-list', component: PurchaseListComponent }
+  { path: 'purchase-list', component: PurchaseListComponent },
+  { path: 'departments-form', component: DepartmentsFormComponent },
+  { path: 'departments-list', component: DepartmentsListComponent }
 
 ];
 
