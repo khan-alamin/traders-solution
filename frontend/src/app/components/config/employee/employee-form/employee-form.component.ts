@@ -74,7 +74,6 @@ export class EmployeeFormComponent implements OnInit {
     if (this.employeeForm.invalid) {
       return;
     }
-    const team: Team = { id: this.controls['team'].value };
     const manager: Employee = { id: this.controls['manager'].value };
     const employeeData: Employee = {
       ...this.employeeForm.value,

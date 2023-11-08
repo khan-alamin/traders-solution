@@ -47,8 +47,9 @@ import { HomeComponent } from './admin-panel/home/home.component';
 import {MatTreeModule} from '@angular/material/tree';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-
-
+import { DepartmentsFormComponent } from './components/config/departments/departments-form/departments-form.component';
+import { DepartmentsListComponent } from './components/config/departments/departments-list/departments-list.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -80,6 +81,8 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
+    DepartmentsFormComponent,
+    DepartmentsListComponent,
 
 
   ],
@@ -106,8 +109,8 @@ import { ContactComponent } from './contact/contact.component';
     MatRadioModule,
     NgxMatFileInputModule,
     NgbModule,
-    MatTreeModule
-
+    MatTreeModule,
+    MatCardModule
 
 
 

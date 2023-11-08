@@ -1,6 +1,6 @@
 <mat-nav-list>
   <div class="logo py-4">
-    <img src="" alt="Company Logo" />
+    <img src="../../../assets/td.PNG" alt="Company Logo" />
   </div>
   <mat-divider></mat-divider>
   <h2 matSubheader class="mt-2">Traders Solution</h2>
@@ -12,13 +12,14 @@
     <mat-icon>dashboard</mat-icon> Dashboard
   </a>
 
-  <button mat-button [matMenuTriggerFor]="form">Forms</button>
 
+  <button mat-button [matMenuTriggerFor]="form">Forms</button>
 <mat-menu #form="matMenu">
   <button mat-menu-item routerLink="/role-form">Role form</button>
   <button mat-menu-item routerLink="/customer-form">Customer form</button>
   <button mat-menu-item routerLink="/employee-form">Employee form</button>
   <button mat-menu-item routerLink="/product-form">Product form</button>
+  <button mat-menu-item routerLink="/departments-form">Departments form</button>
   <button mat-menu-item routerLink="/supplier-form">Supplier form</button>
   <button mat-menu-item routerLink="/order-form">Order form</button>
   <button mat-menu-item routerLink="/purchase-form">Purchase form</button>
@@ -32,6 +33,7 @@
   <button mat-menu-item routerLink="/customer-list">Customer List</button>
   <button mat-menu-item routerLink="/employee-list">Employee List</button>
   <button mat-menu-item routerLink="/product-list">Product List</button>
+  <button mat-menu-item routerLink="/departments-list">Departments List</button>
   <button mat-menu-item routerLink="/supplier-list">Supplier List</button>
   <button mat-menu-item routerLink="/order-list">Order List</button>
   <button mat-menu-item routerLink="/purchase-list">Purchase List</button>
