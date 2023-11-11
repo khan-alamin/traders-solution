@@ -3,7 +3,7 @@ package com.prologiccreations.traderssolution.controller.config;
 import com.prologiccreations.traderssolution.controller.super_classes.CrudController;
 import com.prologiccreations.traderssolution.dto.Response;
 import com.prologiccreations.traderssolution.dto.config.ManagerDto;
-import com.prologiccreations.traderssolution.model.config.Departments;
+import com.prologiccreations.traderssolution.model.config.Department;
 import com.prologiccreations.traderssolution.service.super_classes.config.DepartmentsService;
 import com.prologiccreations.traderssolution.utils.PageUtil;
 import lombok.RequiredArgsConstructor;
@@ -19,25 +19,25 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("departments/")
-public class DepartmentsController implements CrudController<Departments, Long> {
+public class DepartmentsController implements CrudController<Department, Long> {
     private final DepartmentsService departmentsService;
 
     @Override
-    public ResponseEntity<Response> storeData(Departments data) {
+    public ResponseEntity<Response> storeData(Department data) {
         Response response = departmentsService.storeData(data);
         return ResponseEntity.ok(response);
     }
 
     @Override
-    public ResponseEntity<Response<Page<Departments>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
+    public ResponseEntity<Response<Page<Department>>> getAll(Integer pageNumber, Integer pageSize, String sortDirection, String sortColumns) {
         Pageable pageable = PageUtil.getPageable(pageNumber, pageSize, sortDirection, sortColumns);
-        Response<Page<Departments>> response = departmentsService.getAll(pageable);
+        Response<Page<Department>> response = departmentsService.getAll(pageable);
         return ResponseEntity.ok(response);
     }
 
     @Override
-    public ResponseEntity<Response<Departments>> getOne(Long id) {
-        Response<Departments> response = departmentsService.getById(id);
+    public ResponseEntity<Response<Department>> getOne(Long id) {
+        Response<Department> response = departmentsService.getById(id);
         return ResponseEntity.ok(response);
     }
 

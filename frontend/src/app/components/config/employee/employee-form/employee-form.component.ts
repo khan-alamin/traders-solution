@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { EmployeeServiceService as EmployeeService } from 'src/app/services/config/employee.service';
 import { Employee } from '../../../../model/config/employee.model';
 import { Manager } from '../../../../model/config/manager.model';
-import { Team } from '../../../../model/config/team.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
-import { EmployeeServiceService as EmployeeService } from 'src/app/services/config/employee.service';
+import { User } from '../../../../model/auth/user.model';
 
 @Component({
   selector: 'app-employee-form',
@@ -73,6 +73,12 @@ export class EmployeeFormComponent implements OnInit {
     this.submitted = true;
     if (this.employeeForm.invalid) {
       return;
+    }
+
+    const user: User = {
+      username: this.controls.value.username,
+      password: this.controls.value.password,
+      roles: this.controls.value.role,
     }
     const manager: Employee = { id: this.controls['manager'].value };
     const employeeData: Employee = {
