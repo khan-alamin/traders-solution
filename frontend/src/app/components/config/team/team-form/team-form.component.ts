@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Team } from '../../../../model/config/team.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-team-form',
@@ -21,7 +22,7 @@ export class TeamFormComponent implements OnInit {
   endPoint = "team";
   data: any = {}
 
-  constructor(private formBuilder: FormBuilder, private service: DataService) { }
+  constructor(private formBuilder: FormBuilder, private service: DataService,private router: Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -44,6 +45,7 @@ export class TeamFormComponent implements OnInit {
     this.service.save(teamData, this.endPoint).subscribe(response => {
       this.teamForm.reset();
       this.submitted = false;
+      this.router.navigate(['team-list']);
     });
   }
 }

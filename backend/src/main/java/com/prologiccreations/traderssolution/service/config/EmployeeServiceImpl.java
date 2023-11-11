@@ -23,12 +23,12 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository repository;
-    private final UserRepository userRepository;
+   // private final UserRepository userRepository;
     @Override
     public Response storeData(Employee data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            userRepository.save(data.getUser());
+           // userRepository.save(data.getUser());
 
             repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);

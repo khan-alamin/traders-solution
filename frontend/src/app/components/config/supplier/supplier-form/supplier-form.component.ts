@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Supplier } from '../../../../model/config/supplier.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supplier-form',
@@ -35,7 +36,7 @@ export class SupplierFormComponent implements OnInit {
   endPoint = "supplier";
   data: any = {}
 
-  constructor(private formBuilder: FormBuilder, private service: DataService) { }
+  constructor(private formBuilder: FormBuilder, private service: DataService,private router: Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -58,6 +59,7 @@ export class SupplierFormComponent implements OnInit {
     this.service.save(supplierData, this.endPoint).subscribe(response => {
       this.supplierForm.reset();
       this.submitted = false;
+      this.router.navigate(['supplier-list']);
     });
   }
 }
