@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Customer } from '../../../../model/config/customer.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-form',
@@ -28,7 +29,7 @@ export class CustomerFormComponent implements OnInit {
   endPoint = "customer";
   data: any = {}
 
-  constructor(private formBuilder: FormBuilder, private service: DataService) { }
+  constructor(private formBuilder: FormBuilder, private service: DataService,private router: Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -47,12 +48,12 @@ export class CustomerFormComponent implements OnInit {
     if (this.customerForm.invalid) {
       return;
     }
-
     const customerData: Customer = { ...this.customerForm.value };
     this.service.save(customerData, this.endPoint).subscribe(response => {
       this.customerForm.reset();
       this.submitted = false;
-
+      this.router.navigate(['/customer-list']);
     });
+
   }
 }
