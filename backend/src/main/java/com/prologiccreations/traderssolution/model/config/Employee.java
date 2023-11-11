@@ -27,8 +27,8 @@ public class Employee extends AuditableEntity {
     private String department;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private Employee manager;
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
-    private User user;
+//    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+//    private User user;
     private String employeeStatus;
     private double salary;
     private double payFrequency;

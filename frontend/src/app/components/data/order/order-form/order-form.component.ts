@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Order } from '../../../../model/data/order.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-form',
@@ -35,7 +36,7 @@ export class OrderFormComponent implements OnInit {
   endPoint = "order";
   data: any = {}
 
-  constructor(private formBuilder: FormBuilder, private service: DataService) { }
+  constructor(private formBuilder: FormBuilder, private service: DataService, private router: Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -58,6 +59,7 @@ export class OrderFormComponent implements OnInit {
     this.service.save(orderData, this.endPoint).subscribe(response => {
       this.orderForm.reset();
       this.submitted = false;
+      this.router.navigate(['order-list']);
     });
   }
 }

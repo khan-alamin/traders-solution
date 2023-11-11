@@ -16,7 +16,7 @@ export interface Employee extends AuditAbleModel {
   hireDate?: Date;
   designation?: string;
   department?: string;
-  user?: User;
+ // user?: User;
   manager?: Employee;
   employeeStatus?: string;
   salary?: number;

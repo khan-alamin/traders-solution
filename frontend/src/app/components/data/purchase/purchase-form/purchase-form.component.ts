@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Purchase } from '../../../../model/data/purchase.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-purchase-form',
@@ -28,7 +29,7 @@ export class PurchaseFormComponent implements OnInit {
   endPoint = "purchase";
   data: any = {}
 
-  constructor(private formBuilder: FormBuilder, private service: DataService) { }
+  constructor(private formBuilder: FormBuilder, private service: DataService, private router: Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -51,6 +52,7 @@ export class PurchaseFormComponent implements OnInit {
     this.service.save(purchaseData, this.endPoint).subscribe(response => {
       this.purchaseForm.reset();
       this.submitted = false;
+      this.router.navigate(['purchase-list']);
     });
   }
 }

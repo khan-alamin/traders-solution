@@ -5,6 +5,7 @@ import { Manager } from '../../../../model/config/manager.model';
 import { DepartmentsService } from '../../../../services/config/departments.service';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-departments-form',
@@ -26,7 +27,8 @@ export class DepartmentsFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private service: DataService,
-    private departmentsService: DepartmentsService
+    private departmentsService: DepartmentsService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -58,6 +60,7 @@ export class DepartmentsFormComponent implements OnInit {
     this.service.save(departmentsData, this.endPoint).subscribe((response) => {
       this.departmentsForm.reset();
       this.submitted = false;
+      this.router.navigate(['departments-list']);
     });
   }
 }

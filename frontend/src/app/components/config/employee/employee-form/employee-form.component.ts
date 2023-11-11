@@ -6,6 +6,7 @@ import { Manager } from '../../../../model/config/manager.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
 import { User } from '../../../../model/auth/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-form',
@@ -51,8 +52,9 @@ export class EmployeeFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private service: DataService,
-    private employeeService: EmployeeService
-  ) {}
+    private employeeService: EmployeeService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.createForm();
@@ -75,11 +77,11 @@ export class EmployeeFormComponent implements OnInit {
       return;
     }
 
-    const user: User = {
-      username: this.controls.value.username,
-      password: this.controls.value.password,
-      roles: this.controls.value.role,
-    }
+    // const user: User = {
+    //   username: this.controls.value.username,
+    //   password: this.controls.value.password,
+    //   roles: this.controls.value.role,
+    // }
     const manager: Employee = { id: this.controls['manager'].value };
     const employeeData: Employee = {
       ...this.employeeForm.value,
@@ -89,6 +91,7 @@ export class EmployeeFormComponent implements OnInit {
     this.service.save(employeeData, this.endPoint).subscribe((response) => {
       this.employeeForm.reset();
       this.submitted = false;
+      this.router.navigate(['/employee-list']);
     });
   }
 }

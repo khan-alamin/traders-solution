@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Role } from '../../../../model/auth/role.model';
 import { DataService } from '../../../../services/crud.service';
 import { Permission } from '../../../../model/auth/permission.model';
@@ -11,6 +11,11 @@ import { Permission } from '../../../../model/auth/permission.model';
 })
 export class RoleFormComponent implements OnInit {
   roleForm!: FormGroup;
+  
+  controls: any = {
+    "name": new FormControl('', []),
+    "permission": new FormControl('', []),
+  };
   submitted = false;
   endPoint = "role";
 

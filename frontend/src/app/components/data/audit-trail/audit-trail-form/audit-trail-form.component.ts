@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AuditTrail } from '../../../../model/data/audit-trail.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-audit-trail-form',
@@ -26,7 +27,7 @@ export class AuditTrailFormComponent implements OnInit {
   endPoint = "audittrail";
   data: any = {}
 
-  constructor(private formBuilder: FormBuilder, private service: DataService) { }
+  constructor(private formBuilder: FormBuilder, private service: DataService,private router: Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -49,6 +50,7 @@ export class AuditTrailFormComponent implements OnInit {
     this.service.save(audittrailData, this.endPoint).subscribe(response => {
       this.audittrailForm.reset();
       this.submitted = false;
+      this.router.navigate(['audittrail-list']);
     });
   }
 }
