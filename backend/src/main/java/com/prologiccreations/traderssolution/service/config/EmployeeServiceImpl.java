@@ -1,5 +1,6 @@
 package com.prologiccreations.traderssolution.service.config;
 
+import com.prologiccreations.traderssolution.dao.auth.UserRepository;
 import com.prologiccreations.traderssolution.dao.config.EmployeeRepository;
 import com.prologiccreations.traderssolution.dto.Response;
 import com.prologiccreations.traderssolution.dto.config.ManagerDto;
@@ -22,11 +23,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository repository;
-
+    private final UserRepository userRepository;
     @Override
     public Response storeData(Employee data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
+            userRepository.save(data.getUser());
+
             repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {

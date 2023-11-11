@@ -1,5 +1,6 @@
 package com.prologiccreations.traderssolution.model.config;
 
+import com.prologiccreations.traderssolution.model.auth.User;
 import com.prologiccreations.traderssolution.model.super_classes.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -26,6 +27,8 @@ public class Employee extends AuditableEntity {
     private String department;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private Employee manager;
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+    private User user;
     private String employeeStatus;
     private double salary;
     private double payFrequency;

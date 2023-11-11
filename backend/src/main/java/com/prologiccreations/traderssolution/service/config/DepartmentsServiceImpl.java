@@ -3,7 +3,7 @@ package com.prologiccreations.traderssolution.service.config;
 import com.prologiccreations.traderssolution.dao.config.DepartmentsRepository;
 import com.prologiccreations.traderssolution.dto.Response;
 import com.prologiccreations.traderssolution.dto.config.ManagerDto;
-import com.prologiccreations.traderssolution.model.config.Departments;
+import com.prologiccreations.traderssolution.model.config.Department;
 import com.prologiccreations.traderssolution.service.super_classes.config.DepartmentsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -24,7 +24,7 @@ public class DepartmentsServiceImpl implements DepartmentsService {
     private final DepartmentsRepository repository;
 
     @Override
-    public Response storeData(Departments data) {
+    public Response storeData(Department data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
             repository.save(data);
@@ -35,15 +35,15 @@ public class DepartmentsServiceImpl implements DepartmentsService {
     }
 
     @Override
-    public Response<Page<Departments>> getAll(Pageable pageable) {
-        Page<Departments> page = repository.findByActive(true, pageable);
+    public Response<Page<Department>> getAll(Pageable pageable) {
+        Page<Department> page = repository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
-    public Response<Departments> getById(Long id) {
-        Departments Departments = repository.findById(id).orElse(new Departments());
-        return new Response<>(SUCCESS, null, Departments);
+    public Response<Department> getById(Long id) {
+        Department Department = repository.findById(id).orElse(new Department());
+        return new Response<>(SUCCESS, null, Department);
     }
 
     @Override
@@ -53,12 +53,12 @@ public class DepartmentsServiceImpl implements DepartmentsService {
     }
 
     @Override
-    public String validate(Departments data) {
+    public String validate(Department data) {
         return checkDuplicate(data);
     }
 
     @Override
-    public String checkDuplicate(Departments data) {
+    public String checkDuplicate(Department data) {
 //        boolean DepartmentsnameExists;
 //        if (data.hasId()) {
 //            DepartmentsnameExists = DepartmentsRepository.existsByDepartmentsname(data.getDepartmentsname(), data.getId());
