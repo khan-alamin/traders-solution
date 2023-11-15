@@ -1,0 +1,125 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="config.shouldRun" [hasBackdrop]="config.hasBackdrop">
+    <mat-sidenav #sidenav [mode]="config.mode" [position]="config.position" [opened]="config.isOpened">
+        <div class="profile-content">
+
+
+            <h2 matSubheader class="mt-2">Traders Solution</h2>
+            <!-- App logo, name -->
+        </div>
+
+        <div class="container menu-container">
+            <div class="sidenav">
+                <div class="menu-item">Authority
+                    <div class="submenu">
+                        <div class="submenu-item">Role
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'role-form'">Role Form</div>
+                                <div class="subsubmenu-item" [routerLink]="'role-list'">Role List</div>
+                            </div>
+                        </div>
+                        <div class="submenu-item">Permission
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'permission-form'">Permission-Form</div>
+                                <div class="subsubmenu-item" [routerLink]="'permission-list'">Permission-List</div>
+                            </div>
+                        </div>
+                        <!-- <div class="submenu-item">User
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'user-form'">User Form</div>
+                                <div class="subsubmenu-item" [routerLink]="'user-list'">User List</div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="menu-item">Project Configuration
+                    <div class="submenu">
+                        <div class="submenu-item">Customer
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'customer-form'">Customer-form</div>
+                                <div class="subsubmenu-item" [routerLink]="'customer-list'">Customer-list</div>
+                            </div>
+                        </div>
+                        <div class="submenu-item">Departments
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'departments-form'">Departments-form</div>
+                                <div class="subsubmenu-item" [routerLink]="'departments-list'">Departments-list</div>
+                            </div>
+                        </div>
+                        <div class="submenu-item">Employee
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'employee-form'">employee-form</div>
+                                <div class="subsubmenu-item" [routerLink]="'employee-list'">employee-list</div>
+                            </div>
+                        </div>
+                        <div class="submenu-item">Product
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'product-form'">Product-form</div>
+                                <div class="subsubmenu-item" [routerLink]="'product-list'">Product-list</div>
+                            </div>
+                        </div>
+                        <div class="submenu-item">Supplier
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'supplier-form'">Supplier-form</div>
+                                <div class="subsubmenu-item" [routerLink]="'supplier-list'">Supplier-list</div>
+                            </div>
+                        </div>
+                        <div class="submenu-item">Team
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'team-form'">Team-form</div>
+                                <div class="subsubmenu-item" [routerLink]="'team-list'">Team-list</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">Project Data
+                    <div class="submenu">
+
+                        <div class="submenu-item">Audit Trail
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'audittrail-form'">Audittrail-form</div>
+                                <div class="subsubmenu-item" [routerLink]="'audittrail-list'">Audittrail-list</div>
+                            </div>
+                        </div>
+                        <div class="submenu-item">Order
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'order-form'">Order-form</div>
+                                <div class="subsubmenu-item" [routerLink]="'order-list'">Order-list</div>
+                            </div>
+                        </div>
+                        <div class="submenu-item">Purchase
+                            <div class="subsubmenu">
+                                <div class="subsubmenu-item" [routerLink]="'purchase-form'">Purchase-form</div>
+                                <div class="subsubmenu-item" [routerLink]="'purchase-list'">Purchase-list</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ... (remaining code) ... -->
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="page-body">
+            <div style="position: sticky; top: 0;">
+                <mat-toolbar>
+                    <button mat-icon-button (click)="sidenav.toggle()" class="example-icon"
+                        aria-label="Example icon-button with menu icon">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                    <span>My App</span>
+                    <span class="header-content-spacer"></span>
+                    <button mat-icon-button>
+                        <mat-icon>favorite</mat-icon>
+                    </button>
+                    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                        <mat-icon>share</mat-icon>
+                    </button>
+                </mat-toolbar>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

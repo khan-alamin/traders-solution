@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ChildrenOutletContexts, RouterModule, Routes } from '@angular/router';
 import { RoleFormComponent } from './components/auth/role/role-form/role-form.component';
 import { RoleListComponent } from './components/auth/role/role-list/role-list.component';
 import { CustomerFormComponent } from './components/config/customer/customer-form/customer-form.component';
@@ -24,32 +24,42 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { DepartmentsFormComponent } from './components/config/departments/departments-form/departments-form.component';
 import { DepartmentsListComponent } from './components/config/departments/departments-list/departments-list.component';
+import { SidemenuComponent } from './admin-panel/sidemenu/sidemenu.component';
+import { PermissionFormComponent } from './components/auth/permission/permission-form/permission-form.component';
+import { PermissionListComponent } from './components/auth/permission/permission-list/permission-list.component';
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'role-form', component: RoleFormComponent },
-  { path: 'role-list', component: RoleListComponent },
-  { path: 'customer-form', component: CustomerFormComponent },
-  { path: 'customer-list', component: CustomerListComponent },
-  { path: 'employee-form', component: EmployeeFormComponent },
-  { path: 'employee-list', component: EmployeeListComponent },
-  { path: 'product-form', component: ProductFormComponent },
-  { path: 'product-list', component: ProductListComponent },
-  { path: 'supplier-form', component: SupplierFormComponent  },
-  { path: 'supplier-list', component: SupplierListComponent },
-  { path: 'team-form', component: TeamFormComponent },
-  { path: 'team-list', component: TeamListComponent },
-  { path: 'audittrail-form', component: AuditTrailFormComponent },
-  { path: 'audittrail-list', component: AuditTrailListComponent },
-  { path: 'order-form', component: OrderFormComponent },
-  { path: 'order-list', component: OrderListComponent },
-  { path: 'purchase-form', component: PurchaseFormComponent },
-  { path: 'purchase-list', component: PurchaseListComponent },
-  { path: 'departments-form', component: DepartmentsFormComponent },
-  { path: 'departments-list', component: DepartmentsListComponent }
+  {
+    path: '', component: SidemenuComponent,
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'role-form', component: RoleFormComponent },
+      { path: 'role-list', component: RoleListComponent },
+      { path: 'permission-form', component: PermissionFormComponent },
+      { path: 'permission-list', component: PermissionListComponent },
+
+      { path: 'customer-form', component: CustomerFormComponent },
+      { path: 'customer-list', component: CustomerListComponent },
+      { path: 'employee-form', component: EmployeeFormComponent },
+      { path: 'employee-list', component: EmployeeListComponent },
+      { path: 'product-form', component: ProductFormComponent },
+      { path: 'product-list', component: ProductListComponent },
+      { path: 'supplier-form', component: SupplierFormComponent },
+      { path: 'supplier-list', component: SupplierListComponent },
+      { path: 'team-form', component: TeamFormComponent },
+      { path: 'team-list', component: TeamListComponent },
+      { path: 'audittrail-form', component: AuditTrailFormComponent },
+      { path: 'audittrail-list', component: AuditTrailListComponent },
+      { path: 'order-form', component: OrderFormComponent },
+      { path: 'order-list', component: OrderListComponent },
+      { path: 'purchase-form', component: PurchaseFormComponent },
+      { path: 'purchase-list', component: PurchaseListComponent },
+      { path: 'departments-form', component: DepartmentsFormComponent },
+      { path: 'departments-list', component: DepartmentsListComponent }
+    ]
+  },
 
 ];
 
