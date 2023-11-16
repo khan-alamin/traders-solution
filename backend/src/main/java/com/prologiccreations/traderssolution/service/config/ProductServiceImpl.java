@@ -19,13 +19,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
-    private final ProductRepository ProductRepository;
+    private final ProductRepository repository;
 
     @Override
     public Response storeData(Product data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            ProductRepository.save(data);
+            repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -34,19 +34,19 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Response<Page<Product>> getAll(Pageable pageable) {
-        Page<Product> page = ProductRepository.findByActive(true, pageable);
+        Page<Product> page = repository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
     public Response<Product> getById(Long id) {
-        Product Product = ProductRepository.findById(id).orElse(new Product());
+        Product Product = repository.findById(id).orElse(new Product());
         return new Response<>(SUCCESS, null, Product);
     }
 
     @Override
     public Response delete(Long id) {
-        ProductRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        repository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 
@@ -59,9 +59,9 @@ public class ProductServiceImpl implements ProductService {
     public String checkDuplicate(Product data) {
 //        boolean ProductnameExists;
 //        if (data.hasId()) {
-//            ProductnameExists = ProductRepository.existsByProductname(data.getProductname(), data.getId());
+//            ProductnameExists = repository.existsByProductname(data.getProductname(), data.getId());
 //        } else {
-//            ProductnameExists = ProductRepository.existsByProductname(data.getProductname());
+//            ProductnameExists = repository.existsByProductname(data.getProductname());
 //        }
 //        return ProductnameExists ? "Failed to register. Product already exists" : null;
         return null;

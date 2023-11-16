@@ -19,13 +19,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
-    private final OrderRepository OrderRepository;
+    private final OrderRepository repository;
 
     @Override
     public Response storeData(Order data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            OrderRepository.save(data);
+            repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -34,19 +34,19 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Response<Page<Order>> getAll(Pageable pageable) {
-        Page<Order> page = OrderRepository.findByActive(true, pageable);
+        Page<Order> page = repository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
     public Response<Order> getById(Long id) {
-        Order Order = OrderRepository.findById(id).orElse(new Order());
+        Order Order = repository.findById(id).orElse(new Order());
         return new Response<>(SUCCESS, null, Order);
     }
 
     @Override
     public Response delete(Long id) {
-        OrderRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        repository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 
@@ -59,9 +59,9 @@ public class OrderServiceImpl implements OrderService {
     public String checkDuplicate(Order data) {
 //        boolean OrdernameExists;
 //        if (data.hasId()) {
-//            OrdernameExists = OrderRepository.existsByOrdername(data.getOrdername(), data.getId());
+//            OrdernameExists = repository.existsByOrdername(data.getOrdername(), data.getId());
 //        } else {
-//            OrdernameExists = OrderRepository.existsByOrdername(data.getOrdername());
+//            OrdernameExists = repository.existsByOrdername(data.getOrdername());
 //        }
 //        return OrdernameExists ? "Failed to register. Order already exists" : null;
         return null;

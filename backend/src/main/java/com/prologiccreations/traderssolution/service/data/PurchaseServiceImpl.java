@@ -19,13 +19,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 @RequiredArgsConstructor
 public class PurchaseServiceImpl implements PurchaseService {
 
-    private final PurchaseRepository PurchaseRepository;
+    private final PurchaseRepository repository;
 
     @Override
     public Response storeData(Purchase data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            PurchaseRepository.save(data);
+            repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -34,19 +34,19 @@ public class PurchaseServiceImpl implements PurchaseService {
 
     @Override
     public Response<Page<Purchase>> getAll(Pageable pageable) {
-        Page<Purchase> page = PurchaseRepository.findByActive(true, pageable);
+        Page<Purchase> page = repository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
     public Response<Purchase> getById(Long id) {
-        Purchase Purchase = PurchaseRepository.findById(id).orElse(new Purchase());
+        Purchase Purchase = repository.findById(id).orElse(new Purchase());
         return new Response<>(SUCCESS, null, Purchase);
     }
 
     @Override
     public Response delete(Long id) {
-        PurchaseRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        repository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 
@@ -59,9 +59,9 @@ public class PurchaseServiceImpl implements PurchaseService {
     public String checkDuplicate(Purchase data) {
 //        boolean PurchasenameExists;
 //        if (data.hasId()) {
-//            PurchasenameExists = PurchaseRepository.existsByPurchasename(data.getPurchasename(), data.getId());
+//            PurchasenameExists = repository.existsByPurchasename(data.getPurchasename(), data.getId());
 //        } else {
-//            PurchasenameExists = PurchaseRepository.existsByPurchasename(data.getPurchasename());
+//            PurchasenameExists = repository.existsByPurchasename(data.getPurchasename());
 //        }
 //        return PurchasenameExists ? "Failed to register. Purchase already exists" : null;
         return null;

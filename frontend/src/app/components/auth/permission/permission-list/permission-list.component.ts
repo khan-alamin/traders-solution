@@ -34,8 +34,12 @@ export class PermissionListComponent implements OnInit {
 
   edit(index: number) {
     this.service.data = { ...this.dataSource[index] };
-    this.router.navigate(['/']);
+    this.router.navigate(['/permission-form']);
   }
 
+
+  getPermissionAsList(permissions: Permission[]): string {
+    return permissions.map((p: Permission) => p.name).join(", ");
+  }
 
 }

@@ -1,6 +1,6 @@
-<mat-sidenav-container class="sidenav-container" *ngIf="config.shouldRun" [hasBackdrop]="config.hasBackdrop">
+<mat-sidenav-container class="sidenav-container"  *ngIf="config.shouldRun" [hasBackdrop]="config.hasBackdrop">
     <mat-sidenav #sidenav [mode]="config.mode" [position]="config.position" [opened]="config.isOpened">
-        <div class="profile-content">
+        <div class="profile-content" color="primary">
 
 
             <h2 matSubheader class="mt-2">Traders Solution</h2>
@@ -103,7 +103,7 @@
     <mat-sidenav-content>
         <div class="page-body">
             <div style="position: sticky; top: 0;">
-                <mat-toolbar>
+                <mat-toolbar color="primary">
                     <button mat-icon-button (click)="sidenav.toggle()" class="example-icon"
                         aria-label="Example icon-button with menu icon">
                         <mat-icon>menu</mat-icon>

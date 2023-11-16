@@ -19,13 +19,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 @RequiredArgsConstructor
 public class NotificationsServiceImpl implements NotificationsService {
 
-    private final NotificationsRepository NotificationsRepository;
+    private final NotificationsRepository repository;
 
     @Override
     public Response storeData(Notifications data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            NotificationsRepository.save(data);
+            repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -34,19 +34,19 @@ public class NotificationsServiceImpl implements NotificationsService {
 
     @Override
     public Response<Page<Notifications>> getAll(Pageable pageable) {
-        Page<Notifications> page = NotificationsRepository.findByActive(true, pageable);
+        Page<Notifications> page = repository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
     public Response<Notifications> getById(Long id) {
-        Notifications Notifications = NotificationsRepository.findById(id).orElse(new Notifications());
+        Notifications Notifications = repository.findById(id).orElse(new Notifications());
         return new Response<>(SUCCESS, null, Notifications);
     }
 
     @Override
     public Response delete(Long id) {
-        NotificationsRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        repository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 
@@ -59,9 +59,9 @@ public class NotificationsServiceImpl implements NotificationsService {
     public String checkDuplicate(Notifications data) {
 //        boolean NotificationsnameExists;
 //        if (data.hasId()) {
-//            NotificationsnameExists = NotificationsRepository.existsByNotificationsname(data.getNotificationsname(), data.getId());
+//            NotificationsnameExists = repository.existsByNotificationsname(data.getNotificationsname(), data.getId());
 //        } else {
-//            NotificationsnameExists = NotificationsRepository.existsByNotificationsname(data.getNotificationsname());
+//            NotificationsnameExists = repository.existsByNotificationsname(data.getNotificationsname());
 //        }
 //        return NotificationsnameExists ? "Failed to register. Notifications already exists" : null;
         return null;

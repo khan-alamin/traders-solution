@@ -19,13 +19,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 @RequiredArgsConstructor
 public class SupplierServiceImpl implements SupplierService {
 
-    private final SupplierRepository SupplierRepository;
+    private final SupplierRepository repository;
 
     @Override
     public Response storeData(Supplier data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            SupplierRepository.save(data);
+            repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -34,19 +34,19 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public Response<Page<Supplier>> getAll(Pageable pageable) {
-        Page<Supplier> page = SupplierRepository.findByActive(true, pageable);
+        Page<Supplier> page = repository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
     public Response<Supplier> getById(Long id) {
-        Supplier Supplier = SupplierRepository.findById(id).orElse(new Supplier());
+        Supplier Supplier = repository.findById(id).orElse(new Supplier());
         return new Response<>(SUCCESS, null, Supplier);
     }
 
     @Override
     public Response delete(Long id) {
-        SupplierRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        repository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 
@@ -59,9 +59,9 @@ public class SupplierServiceImpl implements SupplierService {
     public String checkDuplicate(Supplier data) {
 //        boolean SuppliernameExists;
 //        if (data.hasId()) {
-//            SuppliernameExists = SupplierRepository.existsBySuppliername(data.getSuppliername(), data.getId());
+//            SuppliernameExists = repository.existsBySuppliername(data.getSuppliername(), data.getId());
 //        } else {
-//            SuppliernameExists = SupplierRepository.existsBySuppliername(data.getSuppliername());
+//            SuppliernameExists = repository.existsBySuppliername(data.getSuppliername());
 //        }
 //        return SuppliernameExists ? "Failed to register. Supplier already exists" : null;
         return null;

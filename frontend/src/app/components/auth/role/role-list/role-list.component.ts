@@ -35,7 +35,7 @@ export class RoleListComponent implements OnInit {
 
   edit(index: number) {
     this.service.data = { ...this.dataSource[index] };
-    this.router.navigate(['/']);
+    this.router.navigate(['/role-form']);
   }
 
   getPermissionAsList(permissions: Permission[]): string {

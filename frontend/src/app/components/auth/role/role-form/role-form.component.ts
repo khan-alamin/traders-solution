@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Role } from '../../../../model/auth/role.model';
 import { DataService } from '../../../../services/crud.service';
 import { Permission } from '../../../../model/auth/permission.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-role-form',
@@ -11,7 +12,7 @@ import { Permission } from '../../../../model/auth/permission.model';
 })
 export class RoleFormComponent implements OnInit {
   roleForm!: FormGroup;
-  
+
   controls: any = {
     "name": new FormControl('', []),
     "permission": new FormControl('', []),
@@ -19,7 +20,7 @@ export class RoleFormComponent implements OnInit {
   submitted = false;
   endPoint = "role";
 
-  constructor(private formBuilder: FormBuilder, private service: DataService) { }
+  constructor(private formBuilder: FormBuilder, private service: DataService,private router:Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -46,6 +47,7 @@ export class RoleFormComponent implements OnInit {
     this.service.save(roleData, this.endPoint).subscribe(response => {
       this.roleForm.reset();
       this.submitted = false;
+      this.router.navigate(['/role-list']);
     });
   }
 }

@@ -19,13 +19,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 @RequiredArgsConstructor
 public class AuditTrailServiceImpl implements AuditTrailService {
 
-    private final AuditTrailRepository AuditTrailRepository;
+    private final AuditTrailRepository repository;
 
     @Override
     public Response storeData(AuditTrail data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            AuditTrailRepository.save(data);
+            repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -34,19 +34,19 @@ public class AuditTrailServiceImpl implements AuditTrailService {
 
     @Override
     public Response<Page<AuditTrail>> getAll(Pageable pageable) {
-        Page<AuditTrail> page = AuditTrailRepository.findByActive(true, pageable);
+        Page<AuditTrail> page = repository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
     public Response<AuditTrail> getById(Long id) {
-        AuditTrail AuditTrail = AuditTrailRepository.findById(id).orElse(new AuditTrail());
+        AuditTrail AuditTrail = repository.findById(id).orElse(new AuditTrail());
         return new Response<>(SUCCESS, null, AuditTrail);
     }
 
     @Override
     public Response delete(Long id) {
-        AuditTrailRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        repository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 
@@ -59,9 +59,9 @@ public class AuditTrailServiceImpl implements AuditTrailService {
     public String checkDuplicate(AuditTrail data) {
 //        boolean AuditTrailnameExists;
 //        if (data.hasId()) {
-//            AuditTrailnameExists = AuditTrailRepository.existsByAuditTrailname(data.getAuditTrailname(), data.getId());
+//            AuditTrailnameExists = repository.existsByAuditTrailname(data.getAuditTrailname(), data.getId());
 //        } else {
-//            AuditTrailnameExists = AuditTrailRepository.existsByAuditTrailname(data.getAuditTrailname());
+//            AuditTrailnameExists = repository.existsByAuditTrailname(data.getAuditTrailname());
 //        }
 //        return AuditTrailnameExists ? "Failed to register. AuditTrail already exists" : null;
         return null;

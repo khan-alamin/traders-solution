@@ -12,8 +12,8 @@ import java.util.List;
 @Entity
 public class Team extends AuditableEntity {
     private String name;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Employee leader;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Employee> members;
 }
