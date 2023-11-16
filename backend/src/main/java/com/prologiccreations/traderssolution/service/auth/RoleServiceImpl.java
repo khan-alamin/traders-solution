@@ -19,13 +19,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 @RequiredArgsConstructor
 public class RoleServiceImpl implements RoleService {
 
-    private final RoleRepository roleRepository;
+    private final RoleRepository repository;
 
     @Override
     public Response storeData(Role data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            roleRepository.save(data);
+            repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -34,19 +34,19 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public Response<Page<Role>> getAll(Pageable pageable) {
-        Page<Role> page = roleRepository.findByActive(true, pageable);
+        Page<Role> page = repository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
     public Response<Role> getById(Long id) {
-        Role role = roleRepository.findById(id).orElse(new Role());
+        Role role = repository.findById(id).orElse(new Role());
         return new Response<>(SUCCESS, null, role);
     }
 
     @Override
     public Response delete(Long id) {
-        roleRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        repository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 
@@ -59,9 +59,9 @@ public class RoleServiceImpl implements RoleService {
     public String checkDuplicate(Role data) {
 //        boolean rolenameExists;
 //        if (data.hasId()) {
-//            rolenameExists = roleRepository.existsByRolename(data.getRolename(), data.getId());
+//            rolenameExists = repository.existsByRolename(data.getRolename(), data.getId());
 //        } else {
-//            rolenameExists = roleRepository.existsByRolename(data.getRolename());
+//            rolenameExists = repository.existsByRolename(data.getRolename());
 //        }
 //        return rolenameExists ? "Failed to register. Role already exists" : null;
         return null;

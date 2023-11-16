@@ -19,13 +19,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 @RequiredArgsConstructor
 public class TeamServiceImpl implements TeamService {
 
-    private final TeamRepository TeamRepository;
+    private final TeamRepository repository;
 
     @Override
     public Response storeData(Team data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            TeamRepository.save(data);
+            repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -34,19 +34,19 @@ public class TeamServiceImpl implements TeamService {
 
     @Override
     public Response<Page<Team>> getAll(Pageable pageable) {
-        Page<Team> page = TeamRepository.findByActive(true, pageable);
+        Page<Team> page = repository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
     public Response<Team> getById(Long id) {
-        Team Team = TeamRepository.findById(id).orElse(new Team());
+        Team Team = repository.findById(id).orElse(new Team());
         return new Response<>(SUCCESS, null, Team);
     }
 
     @Override
     public Response delete(Long id) {
-        TeamRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        repository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 
@@ -59,9 +59,9 @@ public class TeamServiceImpl implements TeamService {
     public String checkDuplicate(Team data) {
 //        boolean TeamnameExists;
 //        if (data.hasId()) {
-//            TeamnameExists = TeamRepository.existsByTeamname(data.getTeamname(), data.getId());
+//            TeamnameExists = repository.existsByTeamname(data.getTeamname(), data.getId());
 //        } else {
-//            TeamnameExists = TeamRepository.existsByTeamname(data.getTeamname());
+//            TeamnameExists = repository.existsByTeamname(data.getTeamname());
 //        }
 //        return TeamnameExists ? "Failed to register. Team already exists" : null;
         return null;

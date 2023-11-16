@@ -19,13 +19,13 @@ import static com.prologiccreations.traderssolution.constants.enums.OperationSta
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-    private final UserRepository userRepository;
+    private final UserRepository repository;
 
     @Override
     public Response storeData(User data) {
         String validationMsg = validate(data);
         if (validationMsg == null) {
-            userRepository.save(data);
+            repository.save(data);
             return new Response(SUCCESS, "Successfully stored data", null);
         } else {
             return new Response(FAILURE, validationMsg, null);
@@ -34,19 +34,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Response<Page<User>> getAll(Pageable pageable) {
-        Page<User> page = userRepository.findByActive(true, pageable);
+        Page<User> page = repository.findByActive(true, pageable);
         return new Response<>(SUCCESS, null, page);
     }
 
     @Override
     public Response<User> getById(Long id) {
-        User user = userRepository.findById(id).orElse(new User());
+        User user = repository.findById(id).orElse(new User());
         return new Response<>(SUCCESS, null, user);
     }
 
     @Override
     public Response delete(Long id) {
-        userRepository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
+        repository.softDeleteById(id, getCurrentUsername(), LocalDateTime.now());
         return new Response(SUCCESS, "Deleted successfully", null);
     }
 
@@ -59,9 +59,9 @@ public class UserServiceImpl implements UserService {
     public String checkDuplicate(User data) {
         boolean usernameExists;
         if (data.hasId()) {
-            usernameExists = userRepository.existsByUsername(data.getUsername(), data.getId());
+            usernameExists = repository.existsByUsername(data.getUsername(), data.getId());
         } else {
-            usernameExists = userRepository.existsByUsername(data.getUsername());
+            usernameExists = repository.existsByUsername(data.getUsername());
         }
         return usernameExists ? "Failed to register. User already exists" : null;
     }
