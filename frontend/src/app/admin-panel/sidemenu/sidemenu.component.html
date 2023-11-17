@@ -1,14 +1,15 @@
-<mat-sidenav-container class="sidenav-container"  *ngIf="config.shouldRun" [hasBackdrop]="config.hasBackdrop">
+<mat-sidenav-container class="sidenav-container" *ngIf="config.shouldRun" [hasBackdrop]="config.hasBackdrop">
     <mat-sidenav #sidenav [mode]="config.mode" [position]="config.position" [opened]="config.isOpened">
         <div class="profile-content" color="primary">
-
-
             <h2 matSubheader class="mt-2">Traders Solution</h2>
-            <!-- App logo, name -->
         </div>
 
         <div class="container menu-container">
             <div class="sidenav">
+
+
+                <div class="menu-item" [routerLink]="'dashboard'">Dashboard
+                </div>
                 <div class="menu-item">Authority
                     <div class="submenu">
                         <div class="submenu-item">Role
@@ -23,12 +24,6 @@
                                 <div class="subsubmenu-item" [routerLink]="'permission-list'">Permission-List</div>
                             </div>
                         </div>
-                        <!-- <div class="submenu-item">User
-                            <div class="subsubmenu">
-                                <div class="subsubmenu-item" [routerLink]="'user-form'">User Form</div>
-                                <div class="subsubmenu-item" [routerLink]="'user-list'">User List</div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
 
@@ -96,14 +91,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="menu-item" [routerLink]="'about'">About
+                </div>
+
+                
+                <div class="menu-item" [routerLink]="'contact'">Contact
+                </div>
+
+
+
+
+
             </div>
-            <!-- ... (remaining code) ... -->
         </div>
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="page-body">
             <div style="position: sticky; top: 0;">
-                <mat-toolbar color="primary">
+                <!-- <mat-toolbar style="background-color: #3498db;">
                     <button mat-icon-button (click)="sidenav.toggle()" class="example-icon"
                         aria-label="Example icon-button with menu icon">
                         <mat-icon>menu</mat-icon>
@@ -116,7 +121,37 @@
                     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
                         <mat-icon>share</mat-icon>
                     </button>
+                    
+
+                </mat-toolbar> -->
+
+                <mat-toolbar style="background-color: #3498db;">
+                    <mat-toolbar-row class="justify-content-between">
+                        <button mat-icon-button (click)="sidenav.toggle()" class="example-icon"
+                            aria-label="Example icon-button with menu icon">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <div class="row mr-2 ml-auto">
+                            <ul class="row m-0 align-items-center">
+                                <li>
+                                    <button mat-button [matMenuTriggerFor]="menu"
+                                        class="user mt-2 d-flex align-items-center">
+                                        <img src="" alt="" class="" />
+                                        User Name
+                                        <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+                                    </button>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>
+                                            <mat-icon>exit_to_app</mat-icon>
+                                            Logout
+                                        </button>
+                                    </mat-menu>
+                                </li>
+                            </ul>
+                        </div>
+                    </mat-toolbar-row>
                 </mat-toolbar>
+
             </div>
             <router-outlet></router-outlet>
         </div>
