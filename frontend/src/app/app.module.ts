@@ -53,6 +53,10 @@ import {MatCardModule} from '@angular/material/card';
 import { SidemenuComponent } from './admin-panel/sidemenu/sidemenu.component';
 import { PermissionFormComponent } from './components/auth/permission/permission-form/permission-form.component';
 import { PermissionListComponent } from './components/auth/permission/permission-list/permission-list.component';
+import { NgChartsModule } from 'ng2-charts';
+
+
+
 
 
 
@@ -116,8 +120,9 @@ import { PermissionListComponent } from './components/auth/permission/permission
     NgxMatFileInputModule,
     NgbModule,
     MatTreeModule,
-    MatCardModule
-
+    MatCardModule,
+    NgChartsModule,
+    
 
 
   ],
