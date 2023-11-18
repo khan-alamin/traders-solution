@@ -85,8 +85,7 @@ export class EmployeeFormComponent implements OnInit {
     const manager: Employee = { id: this.controls['manager'].value };
     const employeeData: Employee = {
       ...this.employeeForm.value,
-      manager: manager,
-      team: null,
+      manager: manager
     };
     this.service.save(employeeData, this.endPoint).subscribe((response) => {
       this.employeeForm.reset();

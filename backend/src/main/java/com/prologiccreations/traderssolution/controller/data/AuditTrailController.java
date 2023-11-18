@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("auditTrail/")
+@RequestMapping("audittrail/")
 public class AuditTrailController implements CrudController<AuditTrail, Long> {
     private final AuditTrailService auditTrailService;
 
