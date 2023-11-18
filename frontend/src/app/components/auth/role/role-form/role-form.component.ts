@@ -39,11 +39,6 @@ export class RoleFormComponent implements OnInit {
       return;
     }
     const permissions: Permission[] = [{ id:Number(this.roleForm.value.permissions ) }];
-    // const permissions: Permission[] = this.roleForm.value.permissions
-      // .split(" */ *")
-      // .map((p: string) => {
-      //   return { name: p, componentKey: p.toUpperCase() };
-      // });
     const roleData: Role = { ...this.roleForm.value, permissions: permissions };
     this.service.save(roleData, this.endPoint).subscribe(response => {
       this.roleForm.reset();

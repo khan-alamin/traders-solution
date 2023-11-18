@@ -9,6 +9,9 @@ import { Page } from '../dto/page.dto';
   providedIn: 'root'
 })
 export class DataService {
+  getOptions() {
+    throw new Error('Method not implemented.');
+  }
 
 
   data: any = {};

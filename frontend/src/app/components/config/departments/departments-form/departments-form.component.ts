@@ -51,7 +51,8 @@ export class DepartmentsFormComponent implements OnInit {
     if (this.departmentsForm.invalid) {
       return;
     }
-    const manager: Departments = { id: this.controls['manager'].value };
+    const manager: Departments = { id:Number(this.departmentsForm.value.manager) };
+    // const manager: Departments = { id: this.controls['manager'].value };
     const departmentsData: Departments = {
       ...this.departmentsForm.value,
       manager: manager
