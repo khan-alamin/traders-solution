@@ -4,6 +4,7 @@ import { Order } from '../../../../model/data/order.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
 import { Router } from '@angular/router';
+import { Employee } from 'src/app/model/config/employee.model';
 
 @Component({
   selector: 'app-order-form',
@@ -54,8 +55,9 @@ export class OrderFormComponent implements OnInit {
     this.submitted = true;
     if (this.orderForm.invalid) {
       return;
-    }
-    const orderData: Order = { ...this.orderForm.value };
+    }    
+    const employee: Employee = { id:Number(this.orderForm.value.employee) };
+    const orderData: Order = { ...this.orderForm.value, employee:employee};
     this.service.save(orderData, this.endPoint).subscribe(response => {
       this.orderForm.reset();
       this.submitted = false;

@@ -4,6 +4,8 @@ import { Purchase } from '../../../../model/data/purchase.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/model/config/product.model';
+import { Supplier } from 'src/app/model/config/supplier.model';
 
 @Component({
   selector: 'app-purchase-form',
@@ -48,7 +50,12 @@ export class PurchaseFormComponent implements OnInit {
     if (this.purchaseForm.invalid) {
       return;
     }
-    const purchaseData: Purchase = { ...this.purchaseForm.value };
+
+    
+    const product: Product = { id:Number(this.purchaseForm.value.product) };
+    const supplier: Supplier = { id:Number(this.purchaseForm.value.supplier) };
+
+    const purchaseData: Purchase = { ...this.purchaseForm.value,product:product,supplier:supplier };
     this.service.save(purchaseData, this.endPoint).subscribe(response => {
       this.purchaseForm.reset();
       this.submitted = false;

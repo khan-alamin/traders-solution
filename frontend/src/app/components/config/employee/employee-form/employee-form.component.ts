@@ -7,6 +7,7 @@ import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
 import { User } from '../../../../model/auth/user.model';
 import { Router } from '@angular/router';
+import { Team } from 'src/app/model/config/team.model';
 
 @Component({
   selector: 'app-employee-form',
@@ -76,16 +77,17 @@ export class EmployeeFormComponent implements OnInit {
     if (this.employeeForm.invalid) {
       return;
     }
-
     // const user: User = {
     //   username: this.controls.value.username,
     //   password: this.controls.value.password,
     //   roles: this.controls.value.role,
     // }
-    const manager: Employee = { id: this.controls['manager'].value };
+    
+    const manager: Employee = { id:Number(this.employeeForm.value.manager) };    
+    const team: Team = { id:Number(this.employeeForm.value.team) };
     const employeeData: Employee = {
       ...this.employeeForm.value,
-      manager: manager
+      manager: null,team:null
     };
     this.service.save(employeeData, this.endPoint).subscribe((response) => {
       this.employeeForm.reset();
