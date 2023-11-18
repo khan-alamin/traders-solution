@@ -37,15 +37,15 @@
 <form [formGroup]="teamForm" (ngSubmit)="submitForm()">
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name">
+        <input type="text" class="form-control" id="name" formControlName="name">
     </div>
     <div class="form-group">
         <label for="leader">Leader</label>
-        <input type="text" class="form-control" id="leader">
+        <input type="text" class="form-control" id="leader"  formControlName="leader" >
     </div>
     <div class="form-group">
         <label for="members">Members</label>
-        <input type="text" class="form-control" id="members">
+        <input type="text" class="form-control" id="members"  formControlName="members">
     </div>
 
     <button class="btn btn-primary" type="submit">Submit</button>

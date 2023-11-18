@@ -4,6 +4,7 @@ import { Team } from '../../../../model/config/team.model';
 import { DataService } from '../../../../services/crud.service';
 import { populateFormControl } from '../../../../utils/object.util';
 import { Router } from '@angular/router';
+import { Employee } from 'src/app/model/config/employee.model';
 
 @Component({
   selector: 'app-team-form',
@@ -16,7 +17,7 @@ export class TeamFormComponent implements OnInit {
     "name": new FormControl('', []),
     "leader": new FormControl('', []),
     "members": new FormControl('', []),
-    
+
   };
   submitted = false;
   endPoint = "team";
@@ -27,7 +28,7 @@ export class TeamFormComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.data = this.service.data;
-    if (this.data.id) {      
+    if (this.data.id) {
       populateFormControl(this.teamForm.controls, this.data);
     }
   }
@@ -41,7 +42,11 @@ export class TeamFormComponent implements OnInit {
     if (this.teamForm.invalid) {
       return;
     }
-    const teamData: Team = { ...this.teamForm.value };
+
+    const leader: Employee = { id:Number(this.teamForm.value.leader) };
+    const members: Employee[] = [{ id:Number(this.teamForm.value.members ) }];
+    const teamData: Team = { ...this.teamForm.value,leader:leader,members:members };
+
     this.service.save(teamData, this.endPoint).subscribe(response => {
       this.teamForm.reset();
       this.submitted = false;

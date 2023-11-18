@@ -54,8 +54,7 @@ export class DepartmentsFormComponent implements OnInit {
     const manager: Departments = { id: this.controls['manager'].value };
     const departmentsData: Departments = {
       ...this.departmentsForm.value,
-      manager: manager,
-      team: null,
+      manager: manager
     };
     this.service.save(departmentsData, this.endPoint).subscribe((response) => {
       this.departmentsForm.reset();

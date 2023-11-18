@@ -4,6 +4,7 @@ import { Role } from '../../../../model/auth/role.model';
 import { DataService } from '../../../../services/crud.service';
 import { Permission } from '../../../../model/auth/permission.model';
 import { Router } from '@angular/router';
+import { IMultiSelectOption } from 'ngx-bootstrap-multiselect';
 
 @Component({
   selector: 'app-role-form',
@@ -12,18 +13,17 @@ import { Router } from '@angular/router';
 })
 export class RoleFormComponent implements OnInit {
   roleForm!: FormGroup;
-
   controls: any = {
     "name": new FormControl('', []),
     "permission": new FormControl('', []),
   };
   submitted = false;
   endPoint = "role";
-
   constructor(private formBuilder: FormBuilder, private service: DataService,private router:Router) { }
 
   ngOnInit() {
     this.createForm();
+
   }
 
   createForm() {
@@ -38,11 +38,12 @@ export class RoleFormComponent implements OnInit {
     if (this.roleForm.invalid) {
       return;
     }
-    const permissions: Permission[] = this.roleForm.value.permissions
-      .split(" */ *")
-      .map((p: string) => {
-        return { name: p, componentKey: p.toUpperCase() };
-      });
+    const permissions: Permission[] = [{ id:Number(this.roleForm.value.permissions ) }];
+    // const permissions: Permission[] = this.roleForm.value.permissions
+      // .split(" */ *")
+      // .map((p: string) => {
+      //   return { name: p, componentKey: p.toUpperCase() };
+      // });
     const roleData: Role = { ...this.roleForm.value, permissions: permissions };
     this.service.save(roleData, this.endPoint).subscribe(response => {
       this.roleForm.reset();
