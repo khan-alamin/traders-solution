@@ -18,7 +18,7 @@ export class CustomerListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('customer').then((res: AppResponse<Page>) => {
+    this.service.getList('customer').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

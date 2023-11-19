@@ -26,17 +26,16 @@ export class DataService {
     });
   }
 
-  async getList(endPoint: string,
+  getList(endPoint: string,
     pageNumber: number = 0,
     pageSize: number = 1000000000,
     sortDirection: string = 'NA',
     sortColumns: string = 'NA'
-  ): Promise<AppResponse<Page>> {
+  ): Observable<AppResponse<Page>> {
     sortDirection = sortDirection == 'NA' ? '' : `/${sortDirection}`;
     sortColumns = sortColumns == 'NA' ? '' : `/${sortColumns}`;
     const url = `${this.config.apiUrl}/${endPoint}/list/${pageNumber}/${pageSize}${sortDirection}${sortColumns}`;
-    let data = await fetch(url);
-    return await data?.json();
+    return this.http.get<AppResponse<Page>>(url);
   }
 
   delete(id: number, endPoint: string): Observable<any> {

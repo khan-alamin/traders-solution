@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ConfigService } from './config.service';
 import { Manager } from 'src/app/model/config/manager.model';
 import { AppResponse } from 'src/app/dto/response.dto';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,8 @@ export class DepartmentsService {
 
   constructor(private http: HttpClient, private config: ConfigService) { }
 
-  async getManagers(): Promise<AppResponse<Manager[]>> {
+  getManagers(): Observable<AppResponse<Manager[]>> {
     const url = `${this.config.apiUrl}/departments/managers`;
-    let data = await fetch(url);
-    return await data?.json();
+    return this.http.get<AppResponse<Manager[]>>(url);
   }
 }

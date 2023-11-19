@@ -19,7 +19,7 @@ export class TeamListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) {}
 
   ngOnInit(): void {
-    this.service.getList('team').then((res: AppResponse<Page>) => {
+    this.service.getList('team').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

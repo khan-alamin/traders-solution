@@ -37,7 +37,7 @@ export class SupplierListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('supplier').then((res: AppResponse<Page>) => {
+    this.service.getList('supplier').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

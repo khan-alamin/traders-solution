@@ -42,7 +42,7 @@ export class ProductListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('product').then((res: AppResponse<Page>) => {
+    this.service.getList('product').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );
