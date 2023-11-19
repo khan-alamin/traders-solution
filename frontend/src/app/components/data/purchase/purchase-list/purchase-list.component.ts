@@ -30,7 +30,7 @@ export class PurchaseListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('purchase').then((res: AppResponse<Page>) => {
+    this.service.getList('purchase').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

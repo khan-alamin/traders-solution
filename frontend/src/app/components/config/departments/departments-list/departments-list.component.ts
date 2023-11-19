@@ -23,7 +23,7 @@ export class DepartmentsListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('departments').then((res: AppResponse<Page>) => {
+    this.service.getList('departments').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

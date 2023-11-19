@@ -37,7 +37,7 @@ export class OrderListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('order').then((res: AppResponse<Page>) => {
+    this.service.getList('order').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

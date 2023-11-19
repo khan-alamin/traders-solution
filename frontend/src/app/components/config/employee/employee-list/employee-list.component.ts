@@ -19,7 +19,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('employee').then((res: AppResponse<Page>) => {
+    this.service.getList('employee').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

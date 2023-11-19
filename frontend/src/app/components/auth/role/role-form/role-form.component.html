@@ -22,9 +22,9 @@
 
     <div class="mb-3">
       <label for="permissions" class="form-label">Permissions</label>
-      <input type="text" class="form-control" id="permissions" formControlName="permissions" placeholder="Permissions">
-      <!-- <ngx-bootstrap-multiselect [options]="myOptions" formControlName="permissions"></ngx-bootstrap-multiselect> -->
-
+      <!-- <input type="text" class="form-control" id="permissions" formControlName="permissions" placeholder="Permissions"> -->
+      <ngx-bootstrap-multiselect [options]="permissionOptions" [settings]="permissionSettings" formControlName="permissions"></ngx-bootstrap-multiselect>
+     
     </div>
 
     <button class="btn btn-primary btn-sm" type="submit">Submit</button>

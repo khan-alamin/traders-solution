@@ -28,7 +28,7 @@ export class AuditTrailListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('audittrail').then((res: AppResponse<Page>) => {
+    this.service.getList('audittrail').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

@@ -37,7 +37,7 @@ export class DepartmentsFormComponent implements OnInit {
     if (this.data.id) {
       populateFormControl(this.departmentsForm.controls, this.data);
     }
-    this.departmentsService.getManagers().then((res) => {
+    this.departmentsService.getManagers().subscribe((res) => {
       this.managers = res.data as Manager[];
     });
   }

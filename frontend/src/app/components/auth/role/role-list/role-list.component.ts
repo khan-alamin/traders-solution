@@ -19,7 +19,7 @@ export class RoleListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('role').then((res: AppResponse<Page>) => {
+    this.service.getList('role').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );

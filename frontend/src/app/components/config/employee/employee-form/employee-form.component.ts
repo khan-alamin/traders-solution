@@ -63,7 +63,7 @@ export class EmployeeFormComponent implements OnInit {
     if (this.data.id) {
       populateFormControl(this.employeeForm.controls, this.data);
     }
-    this.employeeService.getManagers().then((res) => {
+    this.employeeService.getManagers().subscribe((res) => {
       this.managers = res.data as Manager[];
     });
   }
@@ -78,12 +78,13 @@ export class EmployeeFormComponent implements OnInit {
       return;
     }
     // const user: User = {
+    //   name: this.controls.value.name,
     //   username: this.controls.value.username,
     //   password: this.controls.value.password,
-    //   roles: this.controls.value.role,
+    //   roles: this.controls.value.role
     // }
-    
-    const manager: Employee = { id:Number(this.employeeForm.value.manager) };    
+
+    const manager: Employee = { id:Number(this.employeeForm.value.manager) };
     const team: Team = { id:Number(this.employeeForm.value.team) };
     const employeeData: Employee = {
       ...this.employeeForm.value,

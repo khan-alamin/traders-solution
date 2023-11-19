@@ -18,7 +18,7 @@ export class PermissionListComponent implements OnInit {
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getList('permission').then((res: AppResponse<Page>) => {
+    this.service.getList('permission').subscribe((res: AppResponse<Page>) => {
       this.dataSource = res.data.content
     }
     );
