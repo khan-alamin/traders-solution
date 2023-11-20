@@ -39,7 +39,6 @@ const routes: Routes = [
       { path: 'role-list', component: RoleListComponent },
       { path: 'permission-form', component: PermissionFormComponent },
       { path: 'permission-list', component: PermissionListComponent },
-
       { path: 'customer-form', component: CustomerFormComponent },
       { path: 'customer-list', component: CustomerListComponent },
       { path: 'employee-form', component: EmployeeFormComponent },

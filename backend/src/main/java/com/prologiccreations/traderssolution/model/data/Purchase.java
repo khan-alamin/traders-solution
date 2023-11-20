@@ -8,14 +8,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Getter
 @Setter
 @Entity
 public class Purchase extends AuditableEntity {
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
-    private Product product;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+    private List<Product> product;
     private double costPrice;
     private double vat;
     private double discount;

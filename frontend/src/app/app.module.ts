@@ -92,8 +92,7 @@ import { NgxBootstrapMultiselectModule } from 'ngx-bootstrap-multiselect';
     DepartmentsListComponent,
     SidemenuComponent,
     PermissionFormComponent,
-    PermissionListComponent,
-
+    PermissionListComponent
 
   ],
   imports: [
