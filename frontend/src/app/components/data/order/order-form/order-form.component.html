@@ -165,6 +165,11 @@
 <div class="container mt-5">
     <h1>Order Form</h1>
     <form [formGroup]="orderForm" (ngSubmit)="submitForm()">
+      <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
@@ -284,11 +289,67 @@
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <button class="btn btn-primary" type="submit">Submit</button>
-            </div>
-        </div>
     </form>
+
+
+
+  <!-- <ng-container formArrayName="products">
+    <mat-table [dataSource]="products"> -->
+      <!-- Id Column -->
+      <!-- <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.get('id').value}}. </mat-cell>
+      </ng-container> -->
+
+      <!-- User Column -->
+      <!-- <ng-container matColumnDef="userId">
+        <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
+        <mat-cell *matCellDef="let element" [formGroup]="element">
+          <mat-form-field>
+            <mat-select formControlName="userId">
+              <mat-option *ngFor="let user of products" [value]="user.id">
+                {{ user.username }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-cell>
+      </ng-container> -->
+
+      <!-- Title Column -->
+      <!-- <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell *matCellDef="let element;" [formGroup]="element">
+          <mat-form-field *ngIf="element.get('userId').value !== 3">
+            <input matInput placeholder="Title" formControlName="title" required>
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </ng-container> -->
+
+<mat-table [dataSource]="products" >
+  <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="quantity">
+      <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.quantity }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="rate">
+      <mat-header-cell *matHeaderCellDef>Rate</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.rate }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="amount">
+      <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.amount }} </mat-cell>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</mat-table>
+
+
 </div>

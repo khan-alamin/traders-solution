@@ -51,7 +51,7 @@ export class PurchaseFormComponent implements OnInit {
       return;
     }
 
-    
+
     const product: Product = { id:Number(this.purchaseForm.value.product) };
     const supplier: Supplier = { id:Number(this.purchaseForm.value.supplier) };
 

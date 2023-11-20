@@ -14,7 +14,6 @@ public class Role extends ApprovableEntity {
 
     @Column(nullable = false)
     private String name;
-
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private List<Permission> permissions;
 }
