@@ -165,28 +165,26 @@
 <div class="container mt-5">
     <h1>Order Form</h1>
     <form [formGroup]="orderForm" (ngSubmit)="submitForm()">
-      <div class="row">
-        <div class="col-md-12">
-            <button class="btn btn-primary" type="submit">Submit</button>
+        
+        <div class="row">
         </div>
-    </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="OrderDate">Order Date</label>
-                    <input type="date" class="form-control" id="OrderDate">
+                    <input type="date" class="form-control" id="OrderDate" formControlName="OrderDate">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="customer">Customer</label>
-                    <input type="text" class="form-control" id="customer">
+                    <input type="text" class="form-control" id="customer" formControlName="customer">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="employee">Employee</label>
-                    <input type="text" class="form-control" id="employee">
+                    <input type="text" class="form-control" id="employee" formControlName="employee">
                 </div>
             </div>
         </div>
@@ -195,19 +193,19 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="paymentMethod">Payment Method</label>
-                    <input type="text" class="form-control" id="paymentMethod">
+                    <input type="text" class="form-control" id="paymentMethod" formControlName="paymentMethod">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="paymentDate">Payment Date</label>
-                    <input type="date" class="form-control" id="paymentDate">
+                    <input type="date" class="form-control" id="paymentDate" formControlName="paymentDate">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="shippingAddress">Shipping Address</label>
-                    <textarea class="form-control" id="shippingAddress"></textarea>
+                    <textarea class="form-control" id="shippingAddress" formControlName="shippingAddress"></textarea>
                 </div>
             </div>
         </div>
@@ -216,19 +214,19 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="billingAddress">Billing Address</label>
-                    <textarea class="form-control" id="billingAddress"></textarea>
+                    <textarea class="form-control" id="billingAddress" formControlName="billingAddress"></textarea>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="orderStatus">Order Status</label>
-                    <input type="text" class="form-control" id="orderStatus">
+                    <input type="text" class="form-control" id="orderStatus" formControlName="orderStatus">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="totalAmount">Total Amount</label>
-                    <input type="number" class="form-control" id="totalAmount">
+                    <input type="number" class="form-control" id="totalAmount" formControlName="totalAmount">
                 </div>
             </div>
         </div>
@@ -237,19 +235,19 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="taxAmount">Tax Amount</label>
-                    <input type="number" class="form-control" id="taxAmount">
+                    <input type="number" class="form-control" id="taxAmount" formControlName="taxAmount">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="discountAmount">Discount Amount</label>
-                    <input type="number" class="form-control" id="discountAmount">
+                    <input type="number" class="form-control" id="discountAmount" formControlName="discountAmount">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="shippingFee">Shipping Fee</label>
-                    <input type="number" class="form-control" id="shippingFee">
+                    <input type="number" class="form-control" id="shippingFee" formControlName="shippingFee">
                 </div>
             </div>
         </div>
@@ -258,19 +256,20 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="invoiceReceiptNumber">Invoice/Receipt Number</label>
-                    <input type="text" class="form-control" id="invoiceReceiptNumber">
+                    <input type="text" class="form-control" id="invoiceReceiptNumber"
+                        formControlName="invoiceReceiptNumber">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="notesComments">Notes/Comments</label>
-                    <input type="text" class="form-control" id="notesComments">
+                    <input type="text" class="form-control" id="notesComments" formControlName="notesComments">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="deliveryDate">Delivery Date</label>
-                    <input type="date" class="form-control" id="deliveryDate">
+                    <input type="date" class="form-control" id="deliveryDate" formControlName="deliveryDate">
                 </div>
             </div>
         </div>
@@ -279,43 +278,54 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="returnExchangeRequest">Return/Exchange Request</label>
-                    <input type="text" class="form-control" id="returnExchangeRequest">
+                    <input type="text" class="form-control" id="returnExchangeRequest"
+                        formControlName="returnExchangeRequest">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="returnExchangeDate">Return/Exchange Date</label>
-                    <input type="date" class="form-control" id="returnExchangeDate">
+                    <input type="date" class="form-control" id="returnExchangeDate"
+                        formControlName="returnExchangeDate">
                 </div>
             </div>
         </div>
-    </form>
-<!-- your.component.html -->
-<div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>SL</th>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Rate</th>
-        <th>Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of products; let i = index">
-        <td>{{i + 1}}</td>
-        <td>{{item.name}}</td>
-        <td><input #inp class="form-control" type="number" (input)="addOrder(item, inp.value)"></td>
-        <td>{{item.unitPrice}}</td>
-        <td>{{ getAmount(item.id) }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <div>
-    <strong>Total Amount: {{ getTotalAmount() }}</strong>
-  </div>
-</div>
 
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>SL</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Rate</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of products; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{item.name}}</td>
+                        <td><input #inp class="form-control" type="number" (input)="addOrder(item, inp.value)"></td>
+                        <td>{{item.unitPrice}}</td>
+                        <td>{{ getAmount(item.id) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <strong>Total Amount: {{ getTotalAmount() }}</strong>
+            </div>
+    
+        </div>
+
+        
+    <div class="col-md-12">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+
+    </form>
+    
+    
 
 </div>
