@@ -1,7 +1,6 @@
 package com.prologiccreations.traderssolution.model.data;
 
 import com.prologiccreations.traderssolution.model.config.Employee;
-import com.prologiccreations.traderssolution.model.config.Product;
 import com.prologiccreations.traderssolution.model.super_classes.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -18,8 +17,8 @@ public class Order extends AuditableEntity {
     private String customer;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private Employee employee;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
-    private List<Product> product;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+    private List<OrderItem> orderItems;
     private String paymentMethod;
     private LocalDate paymentDate;
     private String shippingAddress;

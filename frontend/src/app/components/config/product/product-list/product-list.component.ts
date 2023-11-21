@@ -63,9 +63,9 @@ export class ProductListComponent implements OnInit {
 
 
 
-  getPermissionAsList(permissions: Permission[]): string {
-    return permissions.map((p: Permission) => p.name).join(", ");
-  }
+  // getPermissionAsList(permissions: Permission[]): string {
+  //   return permissions.map((p: Permission) => p.name).join(", ");
+  // }
 
 
 

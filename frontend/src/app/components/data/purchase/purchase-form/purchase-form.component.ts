@@ -52,10 +52,15 @@ export class PurchaseFormComponent implements OnInit {
     }
 
 
-    const product: Product = { id:Number(this.purchaseForm.value.product) };
+    // const product: Product = {
+    //   id: Number(this.purchaseForm.value.product),
+    //   quantity: undefined,
+    //   amount: undefined,
+    //   rate: undefined
+    // };
     const supplier: Supplier = { id:Number(this.purchaseForm.value.supplier) };
 
-    const purchaseData: Purchase = { ...this.purchaseForm.value,product:product,supplier:supplier };
+    const purchaseData: Purchase = { ...this.purchaseForm.value,product:null,supplier:supplier };
     this.service.save(purchaseData, this.endPoint).subscribe(response => {
       this.purchaseForm.reset();
       this.submitted = false;
