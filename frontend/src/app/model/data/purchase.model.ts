@@ -3,7 +3,7 @@ import { Supplier } from "../config/supplier.model";
 import { AuditAbleModel } from "../super-model/auditable.model";
 
 export interface Purchase extends AuditAbleModel {
-    product?:Product[];
+    product?:string;
     costPrice?:number;
     vat?: number;
     discount?: number;
