@@ -30,11 +30,11 @@ import { PermissionListComponent } from './components/auth/permission/permission
 const routes: Routes = [
   {
     path: '', component: SidemenuComponent,
-    children: [
+    children: [      
+      { path: '', component: DashboardComponent },
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
       { path: 'contact', component: ContactComponent },
-      { path: 'dashboard', component: DashboardComponent },
       { path: 'role-form', component: RoleFormComponent },
       { path: 'role-list', component: RoleListComponent },
       { path: 'permission-form', component: PermissionFormComponent },

@@ -15,8 +15,8 @@ import java.util.List;
 @Setter
 @Entity
 public class Purchase extends AuditableEntity {
-//    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
-    private String product;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+    private List<Product> product;
     private double costPrice;
     private double vat;
     private double discount;
