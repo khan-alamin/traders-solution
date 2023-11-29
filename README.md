@@ -4,5 +4,5 @@
 * mvn clean install
 * mvn spring-boot :run
 ### Frontend setup
-*npm i
-*ng serve
+* npm i
+* ng serve
